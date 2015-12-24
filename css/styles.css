@@ -1,0 +1,191 @@
+@font-face {font-family: "Roboto Light";src: url("../fonts/Roboto-Light.ttf");}
+@font-face {font-family: "Roboto Bold";src: url("../fonts/Roboto-Bold.ttf");}
+@font-face {font-family: "Roboto Regular";src: url("../fonts/Roboto-Regular.ttf");}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Light", sans-serif;
+    font-size: 14px;
+}
+select::-ms-expand {
+    display: none;
+}
+select {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    -ms-appearance: none;
+    appearance: none!important;
+}
+.slide-1{background:url("../images/slide-1.jpg");background-size: cover}
+.slide-2{background:url("../images/slide-2.jpg");background-size: cover}
+.slide-3{background:url("../images/slide-3.jpg");background-size: cover}
+.slide-4{background:url("../images/slide-4.jpg");background-size: cover}
+.slide-5{background:url("../images/slide-5.jpg");background-size: cover}
+body {
+    width: 100%;
+}
+header {
+    width: 100%;
+}
+.header-top {
+    width: 66.66666666666667%;
+    margin: 0 auto;
+    text-align: justify;
+    text-align-last: justify;
+}
+.header-top-hak {
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+}
+.logo {
+    display: inline-block;
+    border: 1px solid white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-top: 1.953125%;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5% 0.3% 0;
+}
+.logo .text-1 {
+    font-size: 2.4em;
+    line-height: 100%;
+}
+.logo .line {
+    display: inline-block;
+    border-top: 1px solid white;
+    width: 15%;
+    vertical-align: top;
+    margin-top: 3.5%;
+}
+.logo .text-2 {
+    display: inline-block;
+    font-size: 0.62em;
+    vertical-align: top;
+}
+nav {
+    display: inline-block;
+    width: 53.515625%;
+    margin-top: 4%;
+}
+.main-menu {
+    display: inline-block;
+    width: 100%;
+    text-align: justify;
+    text-align-last: justify;
+}
+.main-menu li {
+    display: inline-block;
+}
+.main-menu .menu-hak {
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+}
+.main-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border: 1px solid transparent;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.main-menu a:hover {
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.phone-number {
+    display: inline-block;
+    margin-top: 3.4%;
+    vertical-align: top;
+    color: white;
+}
+.phone-number div {
+    display: inline-block;
+    font-family:'Roboto Bold',sans-serif;
+    font-size:1.4em;
+}
+.lang-select-wrap {
+    display: inline-block;
+    width: 30px;
+    margin-top: 4%;
+    margin-left: 1%;
+    position: relative;
+    float: right;
+    vertical-align: top;
+}
+#lang, #lang option {
+    border: none;
+    background: none;
+    color: #0d91e9;
+    font-family: 'Roboto Regular', sans-serif;
+    font-size: 0.857em;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+.lang-select-wrap .mark {
+    position: absolute;
+    top: 0.5em;
+    right: 0;
+    color: #0d91e9;
+    font-size: 0.6em;
+}
+.header-slider-controls {
+    width: 10%;
+    margin-top: 24.5%;
+    margin-left: 73.33%;
+    list-style: none;
+    text-align: right;
+}
+.control {
+    display: inline-block;
+    border: 0.6em solid #b1b1b1;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.control:hover {
+    border: 0.6em solid black;
+}
+.partners {
+    width: 100%;
+    background: url("../images/partners-background.png");
+    text-align: center;
+    padding: 0.5% 0;
+}
+.partners .title {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.4286em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 0.3%;
+}
+.partners .arrow {
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    vertical-align: top;
+    font-size: 4em;
+    margin-top: 0.5%;
+}
+.partners .arrow:hover {
+    color: #4d72fe;
+}
+.partners .slider {
+    display: inline-block;
+    margin: 0 0.5%;
+}
+.partners .partner {
+    display: inline-block;
+}
