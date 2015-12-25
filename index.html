@@ -2,12 +2,55 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Главная</title>
     <link rel="stylesheet" href="css/styles.css"/>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script>
         $(document).ready(function () {
             /***** main slider *****/
+            var header = $('header');
+            var currentSlide = 0;
+            var controls = $('.control');
+            var changeSlide = function() {
+                $(header).removeClass();
+                $('.control').removeClass('active');
+                switch (currentSlide){
+                    case 0:
+                        $(header).addClass('slide-1');
+                        $('.control:nth-child(1)').addClass('active');
+                        break;
+                    case 1:
+                        $(header).addClass('slide-2');
+                        $('.control:nth-child(2)').addClass('active');
+                        break;
+                    case 2:
+                        $(header).addClass('slide-3');
+                        $('.control:nth-child(3)').addClass('active');
+                        break;
+                    case 3:
+                        $(header).addClass('slide-4');
+                        $('.control:nth-child(4)').addClass('active');
+                        break;
+                    case 4:
+                        $(header).addClass('slide-5');
+                        $('.control:nth-child(5)').addClass('active');
+                        break;
+                }
+            };
+            setInterval(function() {
+                if(currentSlide == 4) {
+                    currentSlide = 0;
+                } else {
+                    currentSlide++;
+                }
+                changeSlide();
+            }, 5000);
+            $(controls).click(function() {
+                currentSlide = $(controls).index(this);
+                changeSlide();
+            });
+            /***** end of main slider *****/
 
             /***** slider with partners ****/
             var partners = $('.partner');
@@ -89,11 +132,11 @@
         <div class="header-top-hak"></div>
     </div>
     <ul class="header-slider-controls">
-        <li class="control control-1"></li>
-        <li class="control control-2"></li>
-        <li class="control control-3"></li>
-        <li class="control control-4"></li>
-        <li class="control control-5"></li>
+        <li class="control active"></li>
+        <li class="control"></li>
+        <li class="control"></li>
+        <li class="control"></li>
+        <li class="control"></li>
     </ul>
     <div class="partners">
         <div class="content-block">

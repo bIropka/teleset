@@ -34,11 +34,18 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {color: 
 .slide-4{background:url("../images/slide-4.jpg");background-size: cover}
 .slide-5{background:url("../images/slide-5.jpg");background-size: cover}
 .clearfix {clear: both;}
+html {
+    overflow-x: hidden;
+}
 body {
     width: 100%;
 }
 header {
     width: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 header .content-block {
     text-align: justify;
@@ -166,6 +173,9 @@ nav {
 .control:hover {
     border: 0.6em solid black;
 }
+.header-slider-controls .active {
+    border: 0.6em solid black;
+}
 .partners {
     width: 100%;
     background: url("../images/partners-background.png");
@@ -187,6 +197,7 @@ header .content-block:last-child {
     text-transform: uppercase;
     color: white;
     margin-bottom: 0.3%;
+    text-align-last: auto;
 }
 .partners .arrow {
     display: inline-block;
@@ -305,6 +316,7 @@ header .content-block:last-child {
     padding-top: 3%;
     margin-bottom: 2%;
     resize: none;
+    overflow: auto;
 }
 #to-send {
     width: 106%;
@@ -321,7 +333,7 @@ header .content-block:last-child {
 }
 footer {
     width: 100%;
-    padding: 3% 0 4%;
+    padding: 2% 0;
 }
 footer .block {
     display: inline-block;
@@ -374,4 +386,29 @@ footer a {
 }
 footer a:hover {
     color: #0069af;
+}
+@media (max-width: 1600px) {
+    .call-us .title .text-1 {font-size: 3em;}
+}
+@media (max-width: 1440px) {
+    .content-block {width: 80%;}
+}
+@media (max-width: 1180px) {
+    .content-block {width: 100%;}
+    .our-services .content-block>ul {margin: 0 3%;}
+    .our-services .text-1 {margin-left: 3%;}
+    .our-services .content-block>ul>li:first-child {width: 30%;}
+    .our-services .content-block>ul>li:last-child {width: 30%;}
+    .call-us-form {width: 30%;}
+    footer .block:nth-child(1){width: 15%;margin-left: 2%;}
+    footer .block:nth-child(2){width: 22%;}
+    footer .block:nth-child(3){width: 26%;}
+    footer .block:nth-child(4){width: 22%;float: right;margin-right: 2%;}
+}
+@media (max-width: 980px) {
+    *{font-size: 0.95em;}
+    .header-slider-controls {margin-top: 20%;}
+}
+@media (max-width: 860px) {
+
 }
