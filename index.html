@@ -4,6 +4,57 @@
     <meta charset="UTF-8">
     <title>Главная</title>
     <link rel="stylesheet" href="css/styles.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /***** main slider *****/
+
+            /***** slider with partners ****/
+            var partners = $('.partner');
+            $('.left-arrow').click(function () {
+                for (var i = 0; i < partners.length; i++) {
+                    if ($(partners[i]).hasClass('first')) {
+                        $(partners[i]).removeClass('first');
+                        $(partners[i]).addClass('visible');
+                        $(partners[i - 1]).addClass('first');
+                        $(partners[i + 5]).removeClass('last');
+                        $(partners[i + 4]).removeClass('visible');
+                        $(partners[i + 4]).addClass('last');
+                        if($(partners[0]).hasClass('first')){
+                            $('.left-arrow').css('display', 'none');
+                        }
+                        if(i + 4  < partners.length) {
+                            $('.right-arrow').css('display', 'inline-block');
+                        }
+                        return;
+                    }
+                }
+
+            });
+            $('.right-arrow').click(function () {
+                for (var i = 0; i < partners.length; i++) {
+                    if ($(partners[i]).hasClass('first')) {
+                        $(partners[i]).removeClass('first');
+                        $(partners[i + 1]).removeClass('visible');
+                        $(partners[i + 1]).addClass('first');
+                        $(partners[i + 5]).removeClass('last');
+                        $(partners[i + 5]).addClass('visible');
+                        $(partners[i + 6]).addClass('last');
+                        if($(partners[partners.length - 1]).hasClass('last')){
+                            $('.right-arrow').css('display', 'none');
+                        }
+                        if(i < partners.length - 5) {
+                            $('.left-arrow').css('display', 'inline-block');
+                        }
+                        return;
+                    }
+                }
+
+            });
+            /*****************/
+
+        });
+    </script>
 </head>
 <body>
 
@@ -49,12 +100,24 @@
             <div class="title">Нам доверяют </div>
             <div class="arrow left-arrow">&#8249;</div>
             <ul class="slider">
-                <li class="partner"><a href="#"><img class="gray-image" src="images/partner-1.png" alt="MAKEL"/><img class="color-image" src="images/partner-1-col.png" alt="MAKEL"/></a></li>
-                <li class="partner"><a href="#"><img class="gray-image" src="images/partner-2.png" alt="MAKEL"/><img class="color-image" src="images/partner-2-col.png" alt="MAKEL"/></a></li>
-                <li class="partner"><a href="#"><img class="gray-image" src="images/partner-3.png" alt="MAKEL"/><img class="color-image" src="images/partner-3-col.png" alt="MAKEL"/></a></li>
-                <li class="partner"><a href="#"><img class="gray-image" src="images/partner-4.png" alt="MAKEL"/><img class="color-image" src="images/partner-4-col.png" alt="MAKEL"/></a></li>
-                <li class="partner"><a href="#"><img class="gray-image" src="images/partner-5.png" alt="MAKEL"/><img class="color-image" src="images/partner-5-col.png" alt="MAKEL"/></a></li>
-                <li class="partner"><a href="#"><img class="gray-image" src="images/partner-6.png" alt="MAKEL"/><img class="color-image" src="images/partner-6-col.png" alt="MAKEL"/></a></li>
+                <li class="partner partner-1"><a href="#"><img class="gray-image" src="images/partner-1.png"/><img class="color-image" src="images/partner-1-col.png"/></a></li>
+                <li class="partner partner-2"><a href="#"><img class="gray-image" src="images/partner-2.png"/><img class="color-image" src="images/partner-2-col.png"/></a></li>
+                <li class="partner partner-3"><a href="#"><img class="gray-image" src="images/partner-3.png"/><img class="color-image" src="images/partner-3-col.png"/></a></li>
+                <li class="partner partner-4"><a href="#"><img class="gray-image" src="images/partner-4.png"/><img class="color-image" src="images/partner-4-col.png"/></a></li>
+                <li class="partner partner-5"><a href="#"><img class="gray-image" src="images/partner-5.png"/><img class="color-image" src="images/partner-5-col.png"/></a></li>
+                <li class="partner partner-6"><a href="#"><img class="gray-image" src="images/partner-6.png"/><img class="color-image" src="images/partner-6-col.png"/></a></li>
+                <li class="partner partner-1 first"><a href="#"><img class="gray-image" src="images/partner-1.png"/><img class="color-image" src="images/partner-1-col.png"/></a></li>
+                <li class="partner partner-2 visible"><a href="#"><img class="gray-image" src="images/partner-2.png"/><img class="color-image" src="images/partner-2-col.png"/></a></li>
+                <li class="partner partner-3 visible"><a href="#"><img class="gray-image" src="images/partner-3.png"/><img class="color-image" src="images/partner-3-col.png"/></a></li>
+                <li class="partner partner-4 visible"><a href="#"><img class="gray-image" src="images/partner-4.png"/><img class="color-image" src="images/partner-4-col.png"/></a></li>
+                <li class="partner partner-5 visible"><a href="#"><img class="gray-image" src="images/partner-5.png"/><img class="color-image" src="images/partner-5-col.png"/></a></li>
+                <li class="partner partner-6 last"><a href="#"><img class="gray-image" src="images/partner-6.png"/><img class="color-image" src="images/partner-6-col.png"/></a></li>
+                <li class="partner partner-1"><a href="#"><img class="gray-image" src="images/partner-1.png"/><img class="color-image" src="images/partner-1-col.png"/></a></li>
+                <li class="partner partner-2"><a href="#"><img class="gray-image" src="images/partner-2.png"/><img class="color-image" src="images/partner-2-col.png"/></a></li>
+                <li class="partner partner-3"><a href="#"><img class="gray-image" src="images/partner-3.png"/><img class="color-image" src="images/partner-3-col.png"/></a></li>
+                <li class="partner partner-4"><a href="#"><img class="gray-image" src="images/partner-4.png"/><img class="color-image" src="images/partner-4-col.png"/></a></li>
+                <li class="partner partner-5"><a href="#"><img class="gray-image" src="images/partner-5.png"/><img class="color-image" src="images/partner-5-col.png"/></a></li>
+                <li class="partner partner-6"><a href="#"><img class="gray-image" src="images/partner-6.png"/><img class="color-image" src="images/partner-6-col.png"/></a></li>
             </ul>
             <div class="arrow right-arrow">&#8250;</div>
         </div>
@@ -106,20 +169,20 @@
                 <label class="field-wrap"><input id="caller-name" type="text" placeholder="Имя"/></label>
                 <label class="field-wrap"><input id="caller-phone" type="text" placeholder="Телефон"/></label>
                 <label class="field-wrap"><input id="caller-company" type="text" placeholder="Компания"/></label>
-                <label class="field-wrap"><textarea id="caller-message" cols="30" rows="10" placeholder="Сообщение"></textarea></label>
-                <label class="field-wrap"><input id="submit" type="submit" value="ОТПРАВИТЬ"/></label>
+                <label class="field-wrap"><textarea id="caller-message" cols="30" rows="5" placeholder="Сообщение"></textarea></label>
+                <input id="to-send" type="submit" value="ОТПРАВИТЬ"/>
             </form>
             <div class="clearfix"></div>
         </div>
     </div>
-    <div class="on-map"></div>
+    <iframe class="on-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2537.9766039644464!2d30.610862215859203!3d50.497393191862166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d0506ca7561f%3A0xd7c4a0b9df69d85!2z0LLRg9C7LiDQldC70LXQutGC0YDQvtGC0LXRhdC90ZbRh9C90LAsIDTQkCwgNEEsINCa0LjRl9Cy!5e0!3m2!1sru!2sua!4v1451030159872" width="1920" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
 </main>
 
 <footer>
     <div class="content-block">
-        <div class="footer-cell">
+        <div class="block footer-menu">
             <div class="title">Навигация</div>
-            <ul class="footer-menu">
+            <ul>
                 <li><a href="#">Главная</a></li>
                 <li><a href="#">Услуги</a></li>
                 <li><a href="#">Что мы делаем</a></li>
@@ -127,9 +190,9 @@
                 <li><a href="#">Контакты</a></li>
             </ul>
         </div>
-        <div class="footer-cell">
+        <div class="block footer-projects">
             <div class="title">Проекты:</div>
-            <ul class="projects">
+            <ul>
                 <li>
                     <a href="#">WI-FI</a>
                     <div>Городской WIFI от ТЕЛЕСЕТЬ</div>
@@ -144,9 +207,9 @@
                 </li>
             </ul>
         </div>
-        <div class="footer-cell">
+        <div class="block footer-products">
             <div class="title">Продукты:</div>
-            <ul class="products">
+            <ul>
                 <li>
                     <a href="#">ВИРТУАЛЬНАЯ АТС</a>
                     <div>Организация вашей виртуальной АТС с необходимым вам набором функций
@@ -162,31 +225,30 @@
                 </li>
             </ul>
         </div>
-        <div class="footer-cell">
+        <div class="block footer-contacts">
             <div class="title">Наши контакты</div>
-            <ul class="footer-contacts">
-                <li><div class="address-icon"></div>ул. Электротехническая, дом 4А Киев, Украина, 02660</li>
+            <ul>
+                <li><div class="icon address-icon"></div><div>ул. Электротехническая, дом 4А Киев, Украина, 02660</div></li>
                 <li>
-                    <div class="phone-icon"></div>
+                    <div class="icon phone-icon"></div>
                     <ul>
-                        <li>Отдел обслуживания: (044) 232-96-16</li>
-                        <li>Бухгалтерия: (044) 232-96-10</li>
-                        <li>Факс: (044) 232-96-11</li>
-                        <li>Поддержка: (044) 359-03-93</li>
+                        <li><div>Отдел обслуживания: (044) 232-96-16</div></li>
+                        <li><div>Бухгалтерия: (044) 232-96-10</div></li>
+                        <li><div>Факс: (044) 232-96-11</div></li>
+                        <li><div>Поддержка: (044) 359-03-93</div></li>
                     </ul>
                 </li>
                 <li>
-                    <div class="email-icon"></div>
+                    <div class="icon email-icon"></div>
                     <ul>
-                        <li>Технические вопросы: noc@it-tele.net</li>
-                        <li>Общие вопросы: info@it-tele.net</li>
+                        <li><div>Технические вопросы: noc@it-tele.net</div></li>
+                        <li><div>Общие вопросы: info@it-tele.net</div></li>
                     </ul>
                 </li>
             </ul>
         </div>
+        <div class="clearfix"></div>
     </div>
-
 </footer>
-
 </body>
 </html>
