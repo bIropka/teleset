@@ -176,7 +176,7 @@ nav {
 .header-slider-controls .active {
     border: 0.6em solid black;
 }
-.partners {
+.partners, .partners-2 {
     width: 100%;
     background: url("../images/partners-background.png");
     padding: 0.5% 0;
@@ -190,7 +190,7 @@ nav {
 header .content-block:last-child {
     text-align: center;
 }
-.partners .title {
+.partners .title, .partners-2 .title {
     display: inline-block;
     width: 100%;
     font-size: 1.4286em;
@@ -199,17 +199,17 @@ header .content-block:last-child {
     margin-bottom: 0.3%;
     text-align-last: auto;
 }
-.partners .arrow {
+.arrow {
     display: inline-block;
     color: white;
     cursor: pointer;
     vertical-align: top;
     font-size: 4em;
 }
-.partners .arrow:hover {
+.arrow:hover {
     color: #4d72fe;
 }
-.partners .slider {
+.slider {
     display: inline-block;
     margin: 0 0.5%;
     width: 90%;

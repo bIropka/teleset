@@ -52,8 +52,9 @@
             });
             /***** end of main slider *****/
 
-            /***** slider with partners ****/
-            var partners = $('.partner');
+            /***** sliders with partners ****/
+            /****** slider-1 *******/
+            var partners = $('.partners .partner');
             $('.left-arrow').click(function () {
                 for (var i = 0; i < partners.length; i++) {
                     if ($(partners[i]).hasClass('first')) {
@@ -94,8 +95,48 @@
                 }
 
             });
-            /*****************/
+            /****** slider-2 *******/
+            var partners2 = $('.partners-2 .partner');
+            $('.left-arrow-2').click(function () {
+                for (var i = 0; i < partners2.length; i++) {
+                    if ($(partners2[i]).hasClass('first')) {
+                        $(partners2[i]).removeClass('first');
+                        $(partners2[i]).addClass('visible');
+                        $(partners2[i - 1]).addClass('first');
+                        $(partners2[i + 5]).removeClass('last');
+                        $(partners2[i + 4]).removeClass('visible');
+                        $(partners2[i + 4]).addClass('last');
+                        if($(partners2[0]).hasClass('first')){
+                            $('.left-arrow-2').css('display', 'none');
+                        }
+                        if(i + 4  < partners2.length) {
+                            $('.right-arrow-2').css('display', 'inline-block');
+                        }
+                        return;
+                    }
+                }
 
+            });
+            $('.right-arrow-2').click(function () {
+                for (var i = 0; i < partners2.length; i++) {
+                    if ($(partners2[i]).hasClass('first')) {
+                        $(partners2[i]).removeClass('first');
+                        $(partners2[i + 1]).removeClass('visible');
+                        $(partners2[i + 1]).addClass('first');
+                        $(partners2[i + 5]).removeClass('last');
+                        $(partners2[i + 5]).addClass('visible');
+                        $(partners2[i + 6]).addClass('last');
+                        if($(partners2[partners2.length - 1]).hasClass('last')){
+                            $('.right-arrow-2').css('display', 'none');
+                        }
+                        if(i < partners2.length - 5) {
+                            $('.left-arrow-2').css('display', 'inline-block');
+                        }
+                        return;
+                    }
+                }
+
+            });
         });
     </script>
 </head>
@@ -168,7 +209,50 @@
 </header>
 
 <main>
-
+    <div class="content-block">
+        <div class="company-block">
+            <div class="content-icon"></div>
+            <div class="title"></div>
+            <div class="text-1">
+                <p>
+                    Задача компании "Телесеть" состоит в содействии предприятиям любого размера в их бизнес-успехе и
+                    повышении прибыли через внедрение передовых телекоммуникационных решений.
+                </p>
+                <p>
+                    Мы предлагаем нашим клиентам лучшие из возможных решений их задач.
+                </p>
+                <p>
+                    Мы развиваемся столь же стремительно как и наши клиенты – благодаря этому со многими из них мы
+                    работаем уже более 10 лет, с момента основания нашей компании.
+                </p>
+            </div>
+            <div class="advantages">
+                <div class="sub-title">Преимущества</div>
+                <p>Почему вы можете доверять компании "Телесеть":</p>
+                <p>
+                    Мы предлагаем решения "под ключ", которые повышают эффективность бизнеса.
+                    У нас достаточно знаний и опыта, чтоб осуществить полную интеграцию ИТ-сервисов и телекоммуникаций.
+                </p>
+                <p>
+                    Рынок ИТ и телекоммуникаций развивается очень стремительно, поэтому мы предлагаем гибкие
+                    решения с возможностью их дальнейшей модернизации – это поможет воспользоваться возможностями,
+                    которые откроются в будущем.
+                </p>
+                <p>Мы минимизируем ваши затраты, используя наши знания и возможности.</p>
+                <p>Большинство наших клиентов – компании, которые растут вместе с нами вот уже более пяти лет.</p>
+            </div>
+            <div class="work-base">
+                <div class="sub-title">Рабочая база компании "Телесеть":</div>
+                <ul>
+                    <li>Волоконно-оптическая сеть городского масштаба.</li>
+                    <li>Распределенная сеть Дата-центров.</li>
+                    <li>Высокоскоростные включения во внешние сети.</li>
+                    <li>Круглосуточный мониторинг и контроль работы сети.</li>
+                    <li>Взаимовключение со всеми крупными операторами Украины.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="call-us">
         <div class="content-block">
             <div class="title">
@@ -183,6 +267,33 @@
                 <input id="to-send" type="submit" value="ОТПРАВИТЬ"/>
             </form>
             <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="partners-2">
+        <div class="content-block">
+            <div class="title">Нам доверяют </div>
+            <div class="arrow left-arrow-2">&#8249;</div>
+            <ul class="slider">
+                <li class="partner partner-1"><a href="#"><img class="gray-image" src="images/partner-1.png"/><img class="color-image" src="images/partner-1-col.png"/></a></li>
+                <li class="partner partner-2"><a href="#"><img class="gray-image" src="images/partner-2.png"/><img class="color-image" src="images/partner-2-col.png"/></a></li>
+                <li class="partner partner-3"><a href="#"><img class="gray-image" src="images/partner-3.png"/><img class="color-image" src="images/partner-3-col.png"/></a></li>
+                <li class="partner partner-4"><a href="#"><img class="gray-image" src="images/partner-4.png"/><img class="color-image" src="images/partner-4-col.png"/></a></li>
+                <li class="partner partner-5"><a href="#"><img class="gray-image" src="images/partner-5.png"/><img class="color-image" src="images/partner-5-col.png"/></a></li>
+                <li class="partner partner-6"><a href="#"><img class="gray-image" src="images/partner-6.png"/><img class="color-image" src="images/partner-6-col.png"/></a></li>
+                <li class="partner partner-1 first"><a href="#"><img class="gray-image" src="images/partner-1.png"/><img class="color-image" src="images/partner-1-col.png"/></a></li>
+                <li class="partner partner-2 visible"><a href="#"><img class="gray-image" src="images/partner-2.png"/><img class="color-image" src="images/partner-2-col.png"/></a></li>
+                <li class="partner partner-3 visible"><a href="#"><img class="gray-image" src="images/partner-3.png"/><img class="color-image" src="images/partner-3-col.png"/></a></li>
+                <li class="partner partner-4 visible"><a href="#"><img class="gray-image" src="images/partner-4.png"/><img class="color-image" src="images/partner-4-col.png"/></a></li>
+                <li class="partner partner-5 visible"><a href="#"><img class="gray-image" src="images/partner-5.png"/><img class="color-image" src="images/partner-5-col.png"/></a></li>
+                <li class="partner partner-6 last"><a href="#"><img class="gray-image" src="images/partner-6.png"/><img class="color-image" src="images/partner-6-col.png"/></a></li>
+                <li class="partner partner-1"><a href="#"><img class="gray-image" src="images/partner-1.png"/><img class="color-image" src="images/partner-1-col.png"/></a></li>
+                <li class="partner partner-2"><a href="#"><img class="gray-image" src="images/partner-2.png"/><img class="color-image" src="images/partner-2-col.png"/></a></li>
+                <li class="partner partner-3"><a href="#"><img class="gray-image" src="images/partner-3.png"/><img class="color-image" src="images/partner-3-col.png"/></a></li>
+                <li class="partner partner-4"><a href="#"><img class="gray-image" src="images/partner-4.png"/><img class="color-image" src="images/partner-4-col.png"/></a></li>
+                <li class="partner partner-5"><a href="#"><img class="gray-image" src="images/partner-5.png"/><img class="color-image" src="images/partner-5-col.png"/></a></li>
+                <li class="partner partner-6"><a href="#"><img class="gray-image" src="images/partner-6.png"/><img class="color-image" src="images/partner-6-col.png"/></a></li>
+            </ul>
+            <div class="arrow right-arrow-2">&#8250;</div>
         </div>
     </div>
 </main>
