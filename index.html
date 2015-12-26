@@ -9,46 +9,36 @@
     <script>
         $(document).ready(function () {
             /***** main slider *****/
-            var header = $('header');
-            var currentSlide = 0;
+            var currentSlide = 0, nextSlide = 1;
             var controls = $('.control');
+            var slides = $('.slide');
+
             var changeSlide = function() {
-                $(header).removeClass();
-                $('.control').removeClass('active');
-                switch (currentSlide){
-                    case 0:
-                        $(header).addClass('slide-1');
-                        $('.control:nth-child(1)').addClass('active');
-                        break;
-                    case 1:
-                        $(header).addClass('slide-2');
-                        $('.control:nth-child(2)').addClass('active');
-                        break;
-                    case 2:
-                        $(header).addClass('slide-3');
-                        $('.control:nth-child(3)').addClass('active');
-                        break;
-                    case 3:
-                        $(header).addClass('slide-4');
-                        $('.control:nth-child(4)').addClass('active');
-                        break;
-                    case 4:
-                        $(header).addClass('slide-5');
-                        $('.control:nth-child(5)').addClass('active');
-                        break;
-                }
+                $(slides).eq(currentSlide).fadeOut(1000);
+                $(slides).eq(nextSlide).fadeIn(1000);
             };
-            setInterval(function() {
-                if(currentSlide == 4) {
-                    currentSlide = 0;
+
+            var forTimer = function(){
+                if(currentSlide === 4) {
+                    nextSlide = 0;
                 } else {
-                    currentSlide++;
+                    nextSlide = currentSlide + 1;
                 }
                 changeSlide();
-            }, 5000);
+                currentSlide = nextSlide;
+                $(controls).removeClass('active');
+                $(controls).eq(currentSlide).addClass('active');
+            };
+            var myTimer = setInterval(forTimer, 10000);
+
             $(controls).click(function() {
-                currentSlide = $(controls).index(this);
-                changeSlide();
+                if(!$(this).hasClass('active')){
+                    nextSlide = $(controls).index(this);
+                    $('.control').removeClass('active');
+                    $(this).addClass('active');
+                    changeSlide();
+                    currentSlide = nextSlide;
+                }
             });
             /***** end of main slider *****/
 
@@ -99,9 +89,17 @@
         });
     </script>
 </head>
+
 <body>
 
-<header class="slide-1">
+<header>
+    <ul>
+        <li class="slide current-slide"><div class="text-1">Оптические каналы</div></li>
+        <li class="slide"><div class="text-1">Умная телефония для бизнеса</div></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+        <li class="slide"><div class="text-1">Корпоративные сети передачи данных</div></li>
+    </ul>
     <div class="content-block">
         <div class="logo">
             <div class="text-1">ТЕЛЕСЕТЬ</div>

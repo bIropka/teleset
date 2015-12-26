@@ -9,46 +9,36 @@
     <script>
         $(document).ready(function () {
             /***** main slider *****/
-            var header = $('header');
-            var currentSlide = 0;
+            var currentSlide = 0, nextSlide = 1;
             var controls = $('.control');
+            var slides = $('.slide');
+
             var changeSlide = function() {
-                $(header).removeClass();
-                $('.control').removeClass('active');
-                switch (currentSlide){
-                    case 0:
-                        $(header).addClass('slide-1');
-                        $('.control:nth-child(1)').addClass('active');
-                        break;
-                    case 1:
-                        $(header).addClass('slide-2');
-                        $('.control:nth-child(2)').addClass('active');
-                        break;
-                    case 2:
-                        $(header).addClass('slide-3');
-                        $('.control:nth-child(3)').addClass('active');
-                        break;
-                    case 3:
-                        $(header).addClass('slide-4');
-                        $('.control:nth-child(4)').addClass('active');
-                        break;
-                    case 4:
-                        $(header).addClass('slide-5');
-                        $('.control:nth-child(5)').addClass('active');
-                        break;
-                }
+                $(slides).eq(currentSlide).fadeOut(1000);
+                $(slides).eq(nextSlide).fadeIn(1000);
             };
-            setInterval(function() {
-                if(currentSlide == 4) {
-                    currentSlide = 0;
+
+            var forTimer = function(){
+                if(currentSlide === 4) {
+                    nextSlide = 0;
                 } else {
-                    currentSlide++;
+                    nextSlide = currentSlide + 1;
                 }
                 changeSlide();
-            }, 5000);
+                currentSlide = nextSlide;
+                $(controls).removeClass('active');
+                $(controls).eq(currentSlide).addClass('active');
+            };
+            var myTimer = setInterval(forTimer, 10000);
+
             $(controls).click(function() {
-                currentSlide = $(controls).index(this);
-                changeSlide();
+                if(!$(this).hasClass('active')){
+                    nextSlide = $(controls).index(this);
+                    $('.control').removeClass('active');
+                    $(this).addClass('active');
+                    changeSlide();
+                    currentSlide = nextSlide;
+                }
             });
             /***** end of main slider *****/
 
@@ -101,7 +91,14 @@
 </head>
 <body>
 
-<header class="slide-1">
+<header>
+    <ul>
+        <li class="slide current-slide"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+    </ul>
     <div class="content-block">
         <div class="logo">
             <div class="text-1">ТЕЛЕСЕТЬ</div>
@@ -172,9 +169,9 @@
         <div class="contacts-block">
             <div class="content-icon"></div>
             <div class="title">Контакты</div>
+            <div class="line"></div>
             <iframe class="on-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2537.9766039644464!2d30.610862215859203!3d50.497393191862166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d0506ca7561f%3A0xd7c4a0b9df69d85!2z0LLRg9C7LiDQldC70LXQutGC0YDQvtGC0LXRhdC90ZbRh9C90LAsIDTQkCwgNEEsINCa0LjRl9Cy!5e0!3m2!1sru!2sua!4v1451030159872" width="585" height="270" frameborder="0" style="border:0" allowfullscreen></iframe>
             <div class="block footer-contacts">
-                <div class="title">Наши контакты</div>
                 <ul>
                     <li><div class="icon address-icon"></div><div>ул. Электротехническая, дом 4А Киев, Украина, 02660</div></li>
                     <li>

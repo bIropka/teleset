@@ -28,11 +28,32 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {color: 
     width: 66.66666666666667%;
     margin: 0 auto;
 }
-.slide-1{background:url("../images/slide-1.jpg");background-size: cover}
-.slide-2{background:url("../images/slide-2.jpg");background-size: cover}
-.slide-3{background:url("../images/slide-3.jpg");background-size: cover}
-.slide-4{background:url("../images/slide-4.jpg");background-size: cover}
-.slide-5{background:url("../images/slide-5.jpg");background-size: cover}
+.slide {
+
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: -1;
+     display: none;
+}
+.slide .text-1 {
+    display: inline;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    top: 60%;
+    left: 50%;
+    padding: 0.5% 3% 0.5% 1%;
+}
+.slide:nth-child(1){display: block;background:url("../images/slide-1.jpg");background-size: cover}
+.slide:nth-child(2){background:url("../images/slide-2.jpg");background-size: cover}
+.slide:nth-child(3){background:url("../images/slide-3.jpg");background-size: cover}
+.slide:nth-child(4){background:url("../images/slide-4.jpg");background-size: cover}
+.slide:nth-child(5){background:url("../images/slide-5.jpg");background-size: cover}
 .clearfix {clear: both;}
 html {
     overflow-x: hidden;
@@ -46,6 +67,7 @@ header {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    position: relative;
 }
 header .content-block {
     text-align: justify;
@@ -331,9 +353,128 @@ header .content-block:last-child {
 .on-map {
     width: 100%;
 }
+/********* company page ********/
+.company-block, .contacts-block, .services-block {
+    padding: 0 2.6% 7%;
+}
+.content-icon {
+    display: inline-block;
+    width: 2%;
+    padding-top: 2%;
+    background: url('../images/icons-sprite-2.png') right;
+    margin-right: 5px;
+    background-size: cover;
+}
+.company-block .title, .contacts-block .title, .services-block .title {
+    display: inline-block;
+    font-size: 2.7em;
+    text-transform: uppercase;
+    margin-top: 5%;
+}
+.line {
+    border-top: 1px solid #ededed;
+    margin-bottom: 4%;
+}
+.company-block p, .company-block span {
+    font-size: 1.1em;
+    color: black;
+}
+.company-block .advantages, .company-block .work-base {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    margin-top: 3%;
+}
+.company-block .work-base {
+    margin-left: 5%;
+}
+.company-block .sub-title {
+    font-family: 'Roboto Regular', sans-serif;
+    font-size: 1.3em;
+}
+.company-block .work-base ul {
+    color: #00adfe;
+    margin-left: 3%;
+}
+/***** end of company page *****/
+/********* contacts page ********/
+.contacts-block .content-icon {
+    width: 2.5%;
+    padding-top: 2.3%;
+    background: url('../images/icons-sprite-2.png') no-repeat 51% 0;
+}
+.contacts-block .on-map {
+    display: inline-block;
+    width: 50%;
+}
+.contacts-block .footer-contacts {
+    display: inline-block;
+    width: 35%;
+    float: right;
+}
+.contacts-block .footer-contacts ul {
+    list-style: none;
+}
+.contacts-block .footer-contacts ul div {
+    font-size: 1.15em;
+}
+.contacts-block .footer-contacts .icon {
+    width: 4%;
+    padding-top: 4.5%;
+    left: -6%;
+}
+.contacts-block .footer-contacts .address-icon {
+    background-position: -7% 0;
+    top: 25%;
+}
+.contacts-block .footer-contacts .phone-icon {
+    background-position: 110% 0;
+}
+.contacts-block .footer-contacts .email-icon {
+    width: 6%;
+    left: -7%;
+    background-position: 52% 0;
+}
+/***** end of contacts page *****/
+/********* services page ********/
+.services-block {
+    padding-bottom: 5%;
+}
+.services-block .content-icon {
+    width: 2.5%;
+    padding-top: 2.3%;
+    background: url('../images/icons-sprite-2.png') no-repeat;
+}
+.services-block p {
+    font-size: 1.1em;
+}
+.services-block .sub-title {
+    font-family: 'Roboto Regular', sans-serif;
+    font-size: 1.3em;
+}
+.services-block ul {
+    display: inline-block;
+    width: 47%;
+    color: #00adfe;
+    margin-left: 3%;
+    vertical-align: top;
+    margin-bottom: 4%;
+}
+.services-block .right-list {
+    float: right;
+    margin: 0;
+}
+.services-block li {
+    margin-bottom: 1%;
+}
+.services-block span {
+    color: black;
+}
+/***** end of services page *****/
 footer {
     width: 100%;
     padding: 2% 0;
+    background-color: #fafaf8;
 }
 footer .block {
     display: inline-block;
@@ -364,14 +505,14 @@ footer .title {
 }
 .footer-contacts .icon {
     position: absolute;
-    width: 8%;
-    padding-top: 8%;
+    width: 6%;
+    padding-top: 6%;
     top: 5%;
     left: -8%;
 }
-.footer-contacts .address-icon{width:6%;background:url("../images/icons-sprite.png");background-size: cover;}
-.footer-contacts .phone-icon{width:6%;background:url("../images/icons-sprite.png") 105% 0 no-repeat;background-size: cover;}
-.footer-contacts .email-icon{background:url("../images/icons-sprite.png") 55% 0;background-size: cover;}
+.footer-contacts .address-icon{width:6%;background:url("../images/icons-sprite.png") -4% 0 no-repeat;background-size: cover;}
+.footer-contacts .phone-icon{width:6%;background:url("../images/icons-sprite.png") 108% 0 no-repeat;background-size: cover;}
+.footer-contacts .email-icon{background:url("../images/icons-sprite.png") 50% 0 no-repeat;background-size: cover;}
 
 footer ul {
     list-style: none;

@@ -9,46 +9,36 @@
     <script>
         $(document).ready(function () {
             /***** main slider *****/
-            var header = $('header');
-            var currentSlide = 0;
+            var currentSlide = 0, nextSlide = 1;
             var controls = $('.control');
+            var slides = $('.slide');
+
             var changeSlide = function() {
-                $(header).removeClass();
-                $('.control').removeClass('active');
-                switch (currentSlide){
-                    case 0:
-                        $(header).addClass('slide-1');
-                        $('.control:nth-child(1)').addClass('active');
-                        break;
-                    case 1:
-                        $(header).addClass('slide-2');
-                        $('.control:nth-child(2)').addClass('active');
-                        break;
-                    case 2:
-                        $(header).addClass('slide-3');
-                        $('.control:nth-child(3)').addClass('active');
-                        break;
-                    case 3:
-                        $(header).addClass('slide-4');
-                        $('.control:nth-child(4)').addClass('active');
-                        break;
-                    case 4:
-                        $(header).addClass('slide-5');
-                        $('.control:nth-child(5)').addClass('active');
-                        break;
-                }
+                $(slides).eq(currentSlide).fadeOut(1000);
+                $(slides).eq(nextSlide).fadeIn(1000);
             };
-            setInterval(function() {
-                if(currentSlide == 4) {
-                    currentSlide = 0;
+
+            var forTimer = function(){
+                if(currentSlide === 4) {
+                    nextSlide = 0;
                 } else {
-                    currentSlide++;
+                    nextSlide = currentSlide + 1;
                 }
                 changeSlide();
-            }, 5000);
+                currentSlide = nextSlide;
+                $(controls).removeClass('active');
+                $(controls).eq(currentSlide).addClass('active');
+            };
+            var myTimer = setInterval(forTimer, 10000);
+
             $(controls).click(function() {
-                currentSlide = $(controls).index(this);
-                changeSlide();
+                if(!$(this).hasClass('active')){
+                    nextSlide = $(controls).index(this);
+                    $('.control').removeClass('active');
+                    $(this).addClass('active');
+                    changeSlide();
+                    currentSlide = nextSlide;
+                }
             });
             /***** end of main slider *****/
 
@@ -142,7 +132,14 @@
 </head>
 <body>
 
-<header class="slide-1">
+<header>
+    <ul>
+        <li class="slide current-slide"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+    </ul>
     <div class="content-block">
         <div class="logo">
             <div class="text-1">ТЕЛЕСЕТЬ</div>
@@ -212,7 +209,8 @@
     <div class="content-block">
         <div class="company-block">
             <div class="content-icon"></div>
-            <div class="title"></div>
+            <div class="title">КОМПАНИЯ</div>
+            <div class="line"></div>
             <div class="text-1">
                 <p>
                     Задача компании "Телесеть" состоит в содействии предприятиям любого размера в их бизнес-успехе и
@@ -228,6 +226,7 @@
             </div>
             <div class="advantages">
                 <div class="sub-title">Преимущества</div>
+                <br/>
                 <p>Почему вы можете доверять компании "Телесеть":</p>
                 <p>
                     Мы предлагаем решения "под ключ", которые повышают эффективность бизнеса.
@@ -243,12 +242,13 @@
             </div>
             <div class="work-base">
                 <div class="sub-title">Рабочая база компании "Телесеть":</div>
+                <br/>
                 <ul>
-                    <li>Волоконно-оптическая сеть городского масштаба.</li>
-                    <li>Распределенная сеть Дата-центров.</li>
-                    <li>Высокоскоростные включения во внешние сети.</li>
-                    <li>Круглосуточный мониторинг и контроль работы сети.</li>
-                    <li>Взаимовключение со всеми крупными операторами Украины.</li>
+                    <li><span>Волоконно-оптическая сеть городского масштаба.</span></li>
+                    <li><span>Распределенная сеть Дата-центров.</span></li>
+                    <li><span>Высокоскоростные включения во внешние сети.</span></li>
+                    <li><span>Круглосуточный мониторинг и контроль работы сети.</span></li>
+                    <li><span>Взаимовключение со всеми крупными операторами Украины.</span></li>
                 </ul>
             </div>
         </div>
