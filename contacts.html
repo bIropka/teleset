@@ -43,49 +43,40 @@
             /***** end of main slider *****/
 
             /***** slider with partners ****/
-            var partners = $('.partner');
-            $('.left-arrow').click(function () {
-                for (var i = 0; i < partners.length; i++) {
-                    if ($(partners[i]).hasClass('first')) {
-                        $(partners[i]).removeClass('first');
-                        $(partners[i]).addClass('visible');
-                        $(partners[i - 1]).addClass('first');
-                        $(partners[i + 5]).removeClass('last');
-                        $(partners[i + 4]).removeClass('visible');
-                        $(partners[i + 4]).addClass('last');
-                        if($(partners[0]).hasClass('first')){
-                            $('.left-arrow').css('display', 'none');
-                        }
-                        if(i + 4  < partners.length) {
-                            $('.right-arrow').css('display', 'inline-block');
-                        }
-                        return;
-                    }
+            var elements = $('.partners .partner');
+            var firstElement = $('.partners .partner:first-child');
+            var firstVisible = 6;
+            $('.left-arrow').click(function(){
+                if(firstVisible > 0){
+                    $(firstElement).animate({
+                        'margin-left': '+=49.5%'
+                    }, 1000);
+                    firstVisible -= 3;
+                } else {
+                    $(firstElement).animate({
+                        'margin-left': '-198%'
+                    }, 1000);
+                    firstVisible = elements.length - 6;
                 }
-
+                $(elements).removeClass('first-visible');
+                $(elements).eq(firstVisible).addClass('first-visible');
             });
-            $('.right-arrow').click(function () {
-                for (var i = 0; i < partners.length; i++) {
-                    if ($(partners[i]).hasClass('first')) {
-                        $(partners[i]).removeClass('first');
-                        $(partners[i + 1]).removeClass('visible');
-                        $(partners[i + 1]).addClass('first');
-                        $(partners[i + 5]).removeClass('last');
-                        $(partners[i + 5]).addClass('visible');
-                        $(partners[i + 6]).addClass('last');
-                        if($(partners[partners.length - 1]).hasClass('last')){
-                            $('.right-arrow').css('display', 'none');
-                        }
-                        if(i < partners.length - 5) {
-                            $('.left-arrow').css('display', 'inline-block');
-                        }
-                        return;
-                    }
+            $('.right-arrow').click(function(){
+                if(firstVisible < elements.length - 6){
+                    $(firstElement).animate({
+                        'margin-left': '-=49.5%'
+                    }, 1000);
+                    firstVisible += 3;
+                } else {
+                    $(firstElement).animate({
+                        'margin-left': '0%'
+                    }, 1000);
+                    firstVisible = 0;
                 }
-
+                $(elements).removeClass('first-visible');
+                $(elements).eq(firstVisible).addClass('first-visible');
             });
-            /*****************/
-
+            /*************************/
         });
     </script>
 </head>
@@ -139,26 +130,26 @@
         <div class="content-block">
             <div class="title">Нам доверяют </div>
             <div class="arrow left-arrow">&#8249;</div>
-            <ul class="slider">
-                <li class="partner partner-1"><a href="#"><img class="b-w" src="images/partner-1.png"/><img class="col-im" src="images/partner-1-col.png"/></a></li>
-                <li class="partner partner-2"><a href="#"><img class="b-w" src="images/partner-2.png"/><img class="col-im" src="images/partner-2-col.png"/></a></li>
-                <li class="partner partner-3"><a href="#"><img class="b-w" src="images/partner-3.png"/><img class="col-im" src="images/partner-3-col.png"/></a></li>
-                <li class="partner partner-4"><a href="#"><img class="b-w" src="images/partner-4.png"/><img class="col-im" src="images/partner-4-col.png"/></a></li>
-                <li class="partner partner-5"><a href="#"><img class="b-w" src="images/partner-5.png"/><img class="col-im" src="images/partner-5-col.png"/></a></li>
-                <li class="partner partner-6"><a href="#"><img class="b-w" src="images/partner-6.png"/><img class="col-im" src="images/partner-6-col.png"/></a></li>
-                <li class="partner partner-1 first"><a href="#"><img class="b-w" src="images/partner-1.png"/><img class="col-im" src="images/partner-1-col.png"/></a></li>
-                <li class="partner partner-2 visible"><a href="#"><img class="b-w" src="images/partner-2.png"/><img class="col-im" src="images/partner-2-col.png"/></a></li>
-                <li class="partner partner-3 visible"><a href="#"><img class="b-w" src="images/partner-3.png"/><img class="col-im" src="images/partner-3-col.png"/></a></li>
-                <li class="partner partner-4 visible"><a href="#"><img class="b-w" src="images/partner-4.png"/><img class="col-im" src="images/partner-4-col.png"/></a></li>
-                <li class="partner partner-5 visible"><a href="#"><img class="b-w" src="images/partner-5.png"/><img class="col-im" src="images/partner-5-col.png"/></a></li>
-                <li class="partner partner-6 last"><a href="#"><img class="b-w" src="images/partner-6.png"/><img class="col-im" src="images/partner-6-col.png"/></a></li>
-                <li class="partner partner-1"><a href="#"><img class="b-w" src="images/partner-1.png"/><img class="col-im" src="images/partner-1-col.png"/></a></li>
-                <li class="partner partner-2"><a href="#"><img class="b-w" src="images/partner-2.png"/><img class="col-im" src="images/partner-2-col.png"/></a></li>
-                <li class="partner partner-3"><a href="#"><img class="b-w" src="images/partner-3.png"/><img class="col-im" src="images/partner-3-col.png"/></a></li>
-                <li class="partner partner-4"><a href="#"><img class="b-w" src="images/partner-4.png"/><img class="col-im" src="images/partner-4-col.png"/></a></li>
-                <li class="partner partner-5"><a href="#"><img class="b-w" src="images/partner-5.png"/><img class="col-im" src="images/partner-5-col.png"/></a></li>
-                <li class="partner partner-6"><a href="#"><img class="b-w" src="images/partner-6.png"/><img class="col-im" src="images/partner-6-col.png"/></a></li>
-            </ul>
+            <ul class="slider"><!--
+                --><li class="partner first"><img src="images/p-1.png"/><img src="images/p-1-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-2.png"/><img src="images/p-2-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-3.png"/><img src="images/p-3-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-4.png"/><img src="images/p-4-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-5.png"/><img src="images/p-5-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-6.png"/><img src="images/p-6-col.png"/></li><!--
+                --><li class="partner first-visible"><img src="images/p-1.png"/><img src="images/p-1-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-2.png"/><img src="images/p-2-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-3.png"/><img src="images/p-3-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-4.png"/><img src="images/p-4-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-5.png"/><img src="images/p-5-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-6.png"/><img src="images/p-6-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-1.png"/><img src="images/p-1-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-2.png"/><img src="images/p-2-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-3.png"/><img src="images/p-3-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-4.png"/><img src="images/p-4-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-5.png"/><img src="images/p-5-col.png"/></li><!--
+                --><li class="partner"><img src="images/p-6.png"/><img src="images/p-6-col.png"/></li><!--
+            --></ul>
             <div class="arrow right-arrow">&#8250;</div>
         </div>
     </div>
