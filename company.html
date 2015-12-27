@@ -19,6 +19,7 @@
             };
 
             var forTimer = function(){
+                /****main slider******/
                 if(currentSlide === 4) {
                     nextSlide = 0;
                 } else {
@@ -28,8 +29,11 @@
                 currentSlide = nextSlide;
                 $(controls).removeClass('active');
                 $(controls).eq(currentSlide).addClass('active');
+                /***** partners ****/
+                rightShift();
+                rightShift2();
             };
-            setInterval(forTimer, 10000);
+            setInterval(forTimer, 8000);
 
             $(controls).click(function() {
                 if(!$(this).hasClass('active')){
@@ -47,7 +51,7 @@
             var elements = $('.partners .partner');
             var firstElement = $('.partners .partner:first-child');
             var firstVisible = 6;
-            $('.left-arrow').click(function(){
+            var  leftShift = function(){
                 if(firstVisible > 0){
                     $(firstElement).animate({
                         'margin-left': '+=49.5%'
@@ -61,8 +65,8 @@
                 }
                 $(elements).removeClass('first-visible');
                 $(elements).eq(firstVisible).addClass('first-visible');
-            });
-            $('.right-arrow').click(function(){
+            };
+            var  rightShift = function(){
                 if(firstVisible < elements.length - 6){
                     $(firstElement).animate({
                         'margin-left': '-=49.5%'
@@ -76,12 +80,18 @@
                 }
                 $(elements).removeClass('first-visible');
                 $(elements).eq(firstVisible).addClass('first-visible');
+            };
+            $('.left-arrow').click(function(){
+                leftShift();
+            });
+            $('.right-arrow').click(function(){
+                rightShift()
             });
             /****** slider-2 *******/
             var elements2 = $('.partners-2 .partner');
             var firstElement2 = $('.partners-2 .partner:first-child');
             var firstVisible2 = 6;
-            $('.left-arrow-2').click(function(){
+            var  leftShift2 = function(){
                 if(firstVisible2 > 0){
                     $(firstElement2).animate({
                         'margin-left': '+=49.5%'
@@ -95,8 +105,8 @@
                 }
                 $(elements2).removeClass('first-visible');
                 $(elements2).eq(firstVisible2).addClass('first-visible');
-            });
-            $('.right-arrow-2').click(function(){
+            };
+            var  rightShift2 = function(){
                 if(firstVisible2 < elements2.length - 6){
                     $(firstElement2).animate({
                         'margin-left': '-=49.5%'
@@ -110,6 +120,12 @@
                 }
                 $(elements2).removeClass('first-visible');
                 $(elements2).eq(firstVisible2).addClass('first-visible');
+            };
+            $('.left-arrow-2').click(function(){
+                leftShift2();
+            });
+            $('.right-arrow-2').click(function(){
+                rightShift2();
             });
         });
     </script>
