@@ -42,9 +42,9 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {color: 
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
     color: white;
-    font-size: 2.5em;
+    font-size: 2em;
     text-transform: uppercase;
-    top: 60%;
+    top: 45%;
     left: 50%;
     padding: 0.5% 3% 0.5% 1%;
 }
