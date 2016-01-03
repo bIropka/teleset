@@ -69,13 +69,11 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {color: 
     font-family: "Roboto Bold", sans-serif;
     font-size: 1em;
     display: inline-block;
-    border: 1px solid black;
 }
 .slide:nth-child(3) .text-3 {
     display: inline-block;
     font-family: "Roboto Regular", sans-serif;
     font-size: 0.7em;
-    border: 1px solid black;
 }
 .slide:nth-child(1){display: block;background:url("../images/slide-1.jpg");background-size: cover}
 .slide:nth-child(2){background:url("../images/slide-2.jpg");background-size: cover}
