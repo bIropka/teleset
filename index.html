@@ -8,43 +8,6 @@
     <script src="js/jquery-2.1.4.min.js"></script>
     <script>
         $(document).ready(function () {
-            /***** main slider *****/
-            var currentSlide = 0, nextSlide = 1;
-            var controls = $('.control');
-            var slides = $('.slide');
-
-            var changeSlide = function() {
-                $(slides).eq(currentSlide).fadeOut(1000);
-                $(slides).eq(nextSlide).fadeIn(1000);
-            };
-
-            var forTimer = function(){
-                /****main slider******/
-                if(currentSlide === 4) {
-                    nextSlide = 0;
-                } else {
-                    nextSlide = currentSlide + 1;
-                }
-                changeSlide();
-                currentSlide = nextSlide;
-                $(controls).removeClass('active');
-                $(controls).eq(currentSlide).addClass('active');
-                /***** partners ****/
-                rightShift();
-            };
-            var myTimer = setInterval(forTimer, 8000);
-
-            $(controls).click(function() {
-                if(!$(this).hasClass('active')){
-                    nextSlide = $(controls).index(this);
-                    $('.control').removeClass('active');
-                    $(this).addClass('active');
-                    changeSlide();
-                    currentSlide = nextSlide;
-                }
-            });
-            /***** end of main slider *****/
-
             /***** slider with partners ****/
             var elements = $('.partners .partner');
             var firstElement = $('.partners .partner:first-child');
@@ -85,7 +48,43 @@
             $('.right-arrow').click(function(){
                 rightShift()
             });
-            /*************************/
+            /*** end of slider with partners ***/
+            /***** main slider *****/
+            var currentSlide = 0, nextSlide = 1;
+            var controls = $('.control');
+            var slides = $('.slide');
+
+            var changeSlide = function() {
+                $(slides).eq(currentSlide).fadeOut(1000);
+                $(slides).eq(nextSlide).fadeIn(1000);
+            };
+
+            var forTimer = function(){
+                /****main slider******/
+                if(currentSlide === 4) {
+                    nextSlide = 0;
+                } else {
+                    nextSlide = currentSlide + 1;
+                }
+                changeSlide();
+                currentSlide = nextSlide;
+                $(controls).removeClass('active');
+                $(controls).eq(currentSlide).addClass('active');
+                /***** partners ****/
+                rightShift();
+            };
+            var myTimer = setInterval(forTimer, 8000);
+
+            $(controls).click(function() {
+                if(!$(this).hasClass('active')){
+                    nextSlide = $(controls).index(this);
+                    $('.control').removeClass('active');
+                    $(this).addClass('active');
+                    changeSlide();
+                    currentSlide = nextSlide;
+                }
+            });
+            /***** end of main slider *****/
         });
     </script>
 </head>
@@ -96,7 +95,14 @@
     <ul>
         <li class="slide current-slide"><div class="text-1">Оптические каналы</div></li>
         <li class="slide"><div class="text-1">Умная телефония для бизнеса</div></li>
-        <li class="slide"></li>
+        <li class="slide">
+            <div class="text-1">
+                <div class="line"></div>
+                <div class="text-2">умный дом</div>
+                <div class="line"></div>
+                <div class="text-3">каждая квартира подключена к умному дому</div>
+            </div>
+        </li>
         <li class="slide"></li>
         <li class="slide"><div class="text-1">Корпоративные сети передачи данных</div></li>
     </ul>
@@ -141,24 +147,24 @@
             <div class="title">Нам доверяют </div>
             <div class="arrow left-arrow">&#8249;</div>
             <ul class="slider"><!--
-                --><li class="partner first"><img src="images/p-1.png"/><img src="images/p-1-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-2.png"/><img src="images/p-2-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-3.png"/><img src="images/p-3-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-4.png"/><img src="images/p-4-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-5.png"/><img src="images/p-5-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-6.png"/><img src="images/p-6-col.png"/></li><!--
-                --><li class="partner first-visible"><img src="images/p-1.png"/><img src="images/p-1-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-2.png"/><img src="images/p-2-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-3.png"/><img src="images/p-3-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-4.png"/><img src="images/p-4-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-5.png"/><img src="images/p-5-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-6.png"/><img src="images/p-6-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-1.png"/><img src="images/p-1-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-2.png"/><img src="images/p-2-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-3.png"/><img src="images/p-3-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-4.png"/><img src="images/p-4-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-5.png"/><img src="images/p-5-col.png"/></li><!--
-                --><li class="partner"><img src="images/p-6.png"/><img src="images/p-6-col.png"/></li><!--
+                --><li class="partner first"><img src="images/logos/airport_logo-bw.png"/><img src="images/logos/airport_logo.png"/></li><!--
+                --><li class="partner"><img src="images/logos/ARCH-house-bw.png"/><img src="images/logos/ARCH-house.png"/></li><!--
+                --><li class="partner"><img src="images/logos/biofarma-bw.png"/><img src="images/logos/biofarma.png"/></li><!--
+                --><li class="partner"><img src="images/logos/cosmonova-logo-bw.png"/><img src="images/logos/cosmonova-logo.png"/></li><!--
+                --><li class="partner"><img src="images/logos/dss-bw.png"/><img src="images/logos/dss.png"/></li><!--
+                --><li class="partner"><img src="images/logos/finbank-bw.png"/><img src="images/logos/finbank.png"/></li><!--
+                --><li class="partner first-visible"><img src="images/logos/gold-logo-bw.png"/><img src="images/logos/gold-logo.png"/></li><!--
+                --><li class="partner"><img src="images/logos/hotel-bw.png"/><img src="images/logos/hotel.png"/></li><!--
+                --><li class="partner"><img src="images/logos/infocom-bw.png"/><img src="images/logos/infocom.png"/></li><!--
+                --><li class="partner"><img src="images/logos/makel-logo-bw.png"/><img src="images/logos/makel-logo.png"/></li><!--
+                --><li class="partner"><img src="images/logos/metrograd-bw.png"/><img src="images/logos/metrograd.png"/></li><!--
+                --><li class="partner"><img src="images/logos/metropolis-bw.png"/><img src="images/logos/metropolis.png"/></li><!--
+                --><li class="partner"><img src="images/logos/mts-logo-bw.png"/><img src="images/logos/mts-logo.png"/></li><!--
+                --><li class="partner"><img src="images/logos/muracami-bw.png"/><img src="images/logos/muracami.png"/></li><!--
+                --><li class="partner"><img src="images/logos/rozetka-logo-bw.png"/><img src="images/logos/rozetka-logo.png"/></li><!--
+                --><li class="partner"><img src="images/logos/scientific-logo-bw.png"/><img src="images/logos/scientific-logo.png"/></li><!--
+                --><li class="partner"><img src="images/logos/vtb-bw.png"/><img src="images/logos/vtb.png"/></li><!--
+                --><li class="partner"><img src="images/logos/zhitomirenergo-bw.png"/><img src="images/logos/zhitomirenergo.png"/></li><!--
             --></ul>
             <div class="arrow right-arrow">&#8250;</div>
         </div>
