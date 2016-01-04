@@ -150,6 +150,7 @@ header .content-block {
     text-align: center;
     padding: 0.5% 0.3% 0;
     vertical-align: top;
+    text-decoration: none;
 }
 .logo .text-1 {
     font-size: 2.4em;
@@ -252,10 +253,10 @@ nav {
     cursor: pointer;
 }
 .control:hover {
-    border: 0.6em solid yellow;
+    border: 0.6em solid #5b5b5b;
 }
 .header-slider-controls .active {
-    border: 0.6em solid yellow;
+    border: 0.6em solid #5b5b5b;
 }
 .partners, .partners-2 {
     width: 100%;
@@ -274,11 +275,12 @@ header .content-block:last-child {
 .partners .title, .partners-2 .title {
     display: inline-block;
     width: 100%;
-    font-size: 1.4286em;
+    font-size: 1.6em;
     text-transform: uppercase;
     color: white;
-    margin-bottom: 0.3%;
+    margin-bottom: 1%;
     text-align-last: auto;
+    font-family: "Roboto Bold", sans-serif;
 }
 .arrow {
     display: inline-block;
