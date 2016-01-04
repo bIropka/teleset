@@ -48,36 +48,40 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {color: 
     left: 50%;
     padding: 0.5% 3% 0.5% 1%;
 }
-.slide:nth-child(3) .text-1 {
+.slide .content {
+    position: absolute;
     background: none;
     text-align: center;
     width: 40%;
-    top: 13%;
-    left: auto;
+    top: 15%;
     right: 2%;
     padding: 0;
 }
-.slide:nth-child(3) .line {
+.slide .content .line {
     width: 15%;
     height: 0;
     border-top: 1px solid white;
     display: inline-block;
-    margin: 0 5%;
-    vertical-align: middle;
+    margin: 1em 5%;
 }
-.slide:nth-child(3) .text-2 {
-    font-family: "Roboto Bold", sans-serif;
-    font-size: 1em;
+.slide .content .text-2 {
     display: inline-block;
+    font-family: "Roboto Bold", sans-serif;
+    font-size: 3em;
+    color: white;
+    text-transform: uppercase;
 }
-.slide:nth-child(3) .text-3 {
+.slide .content .text-3 {
     display: inline-block;
     font-family: "Roboto Regular", sans-serif;
-    font-size: 0.7em;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.5em;
 }
 .slide-icons {
     display: inline-block;
     width: 100%;
+    margin-top: 3%;
 }
 .slide-icons li {
     display: inline-block;
@@ -145,6 +149,7 @@ header .content-block {
     text-transform: uppercase;
     text-align: center;
     padding: 0.5% 0.3% 0;
+    vertical-align: top;
 }
 .logo .text-1 {
     font-size: 2.4em;
@@ -577,32 +582,59 @@ footer a:hover {
 }
 @media (max-width: 1600px) {
     .call-us .title .text-1 {font-size: 3em;}
-    .slide:nth-child(3) .text-2 {font-size: 0.9em;}
-    .slide:nth-child(3) .text-3 {font-size: 0.6em;}
+    .slide .text-1{font-size: 1.5em;}
 }
 @media (max-width: 1440px) {
     .content-block {width: 80%;}
-    .slide:nth-child(3) .text-1 {top:17%;}
+    .slide .content .text-2 {font-size: 1.5em;}
+    .slide .content .text-3 {font-size: 1em;}
+    .slide .content .text-4 {font-size: 0.8em;}
 }
 @media (max-width: 1366px) {
-    .slide .text-1{font-size: 1.5em;}
+    .lang-select-wrap .mark {bottom: 2px;right: 3px}
 }
 @media (max-width: 1180px) {
+    header .content-block{text-align: center; text-align-last: center}
     .content-block {width: 100%;}
+    nav {width: 45%;margin-top: 0.5%;}
+    .content-block .block-title {font-size: 2em;}
+    .main-menu {text-align: center;text-align-last: center;    }
+    .main-menu li {width: 30%;padding: 0.75% 0;}
+    .logo {margin-top: 0.5%;}
+    .slide .text-1{font-size: 1.3em;top:30%;}
+    .header-slider-controls {width: 15%;margin-top: 10%;margin-left: 70%;}
+    .phone-number{margin-top:1.5%;}
+    .lang-select-wrap {margin-top:1.8%;}
+    .slide .content {width: 90%;top: 25%;right: auto; left: 10%;}
+    .slide .content .line{display: none;}
+    .slide-icons {margin-top: 0;}
+    .slide-icons li {width:14%;text-align: center;}
+    .slide-icons .icon {width: 35%;padding-top: 35%;margin: 5% 32.5%;}
+    .slide .content .text-2 {float: left;margin-left: 4%;}
+    .slide .content .text-3 {float: right;margin-right: 3%;}
+    .slide .content .text-3:after {clear: both;}
+    .slide-icons .text-4 {font-size: 0.8em;}
+    .arrow {line-height: 0.7em;}
+    .slider{width: 70%;}
+    .partners .title, .partners-2 .title {font-size: 1.1em;}
     .our-services .content-block>ul {margin: 0 3%;}
     .our-services .text-1 {margin-left: 3%;}
     .our-services .content-block>ul>li:first-child {width: 30%;}
     .our-services .content-block>ul>li:last-child {width: 30%;}
     .call-us-form {width: 30%;}
-    footer .block:nth-child(1){width: 15%;margin-left: 2%;}
-    footer .block:nth-child(2){width: 22%;}
-    footer .block:nth-child(3){width: 26%;}
-    footer .block:nth-child(4){width: 22%;float: right;margin-right: 2%;}
 }
-@media (max-width: 980px) {
-    *{font-size: 0.95em;}
-    .header-slider-controls {margin-top: 20%;}
+@media (max-width: 1024px) {
+    .slide .text-1{font-size: 1em;top:30%;}
+    .slide-icons .icon {width: 30%;padding-top: 30%;margin: 5% 35%;}
+    .logo{font-size: 0.9em;}
+    .our-services .content-block > ul > li a {font-size: 1.1em}
+    footer .block:nth-child(1){width: 100%;margin-left: 0;text-align: center}
+    .footer-menu .title {margin-left: 0;}
+    .footer-menu li {display:inline-block; width:12%;margin: 1% 2% 5%;}
+    footer .block:nth-child(2){width: 24%;margin-left: 2%;}
+    footer .block:nth-child(3){width: 26%;}
+    footer .block:nth-child(4){width: 35%;}
+    nav a{font-size: 0.9em;}
 }
 @media (max-width: 860px) {
-
 }
