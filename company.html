@@ -55,13 +55,15 @@
                 if(firstVisible > 0){
                     $(firstElement).animate({
                         'margin-left': '+=49.5%'
-                    }, 1000);
+                    }, 600);
                     firstVisible -= 3;
                 } else {
-                    $(firstElement).animate({
-                        'margin-left': '-198%'
-                    }, 1000);
+                    $(firstElement).css('margin-left', '-297%');
                     firstVisible = elements.length - 6;
+                    $(firstElement).animate({
+                        'margin-left': '+=49.5%'
+                    }, 600);
+                    firstVisible -= 3;
                 }
                 $(elements).removeClass('first-visible');
                 $(elements).eq(firstVisible).addClass('first-visible');
@@ -70,13 +72,15 @@
                 if(firstVisible < elements.length - 6){
                     $(firstElement).animate({
                         'margin-left': '-=49.5%'
-                    }, 1000);
+                    }, 600);
                     firstVisible += 3;
                 } else {
-                    $(firstElement).animate({
-                        'margin-left': '0%'
-                    }, 1000);
+                    $(firstElement).css('margin-left', '0%');
                     firstVisible = 0;
+                    $(firstElement).animate({
+                        'margin-left': '-=49.5%'
+                    }, 600);
+                    firstVisible += 3;
                 }
                 $(elements).removeClass('first-visible');
                 $(elements).eq(firstVisible).addClass('first-visible');
@@ -95,13 +99,15 @@
                 if(firstVisible2 > 0){
                     $(firstElement2).animate({
                         'margin-left': '+=49.5%'
-                    }, 1000);
+                    }, 600);
                     firstVisible2 -= 3;
                 } else {
-                    $(firstElement2).animate({
-                        'margin-left': '-198%'
-                    }, 1000);
+                    $(firstElement2).css('margin-left', '-297%');
                     firstVisible2 = elements2.length - 6;
+                    $(firstElement2).animate({
+                        'margin-left': '+=49.5%'
+                    }, 600);
+                    firstVisible2 -= 3;
                 }
                 $(elements2).removeClass('first-visible');
                 $(elements2).eq(firstVisible2).addClass('first-visible');
@@ -110,13 +116,15 @@
                 if(firstVisible2 < elements2.length - 6){
                     $(firstElement2).animate({
                         'margin-left': '-=49.5%'
-                    }, 1000);
+                    }, 600);
                     firstVisible2 += 3;
                 } else {
-                    $(firstElement2).animate({
-                        'margin-left': '0%'
-                    }, 1000);
+                    $(firstElement2).css('margin-left', '0%');
                     firstVisible2 = 0;
+                    $(firstElement2).animate({
+                        'margin-left': '-=49.5%'
+                    }, 600);
+                    firstVisible2 += 3;
                 }
                 $(elements2).removeClass('first-visible');
                 $(elements2).eq(firstVisible2).addClass('first-visible');
@@ -236,6 +244,12 @@
                 --><li class="partner"><img src="images/logos/scientific-logo-bw.png"/><img src="images/logos/scientific-logo.png"/></li><!--
                 --><li class="partner"><img src="images/logos/vtb-bw.png"/><img src="images/logos/vtb.png"/></li><!--
                 --><li class="partner"><img src="images/logos/zhitomirenergo-bw.png"/><img src="images/logos/zhitomirenergo.png"/></li><!--
+                --><li class="partner"><img src="images/logos/airport_logo-bw.png"/><img src="images/logos/airport_logo.png"/></li><!--
+                --><li class="partner"><img src="images/logos/ARCH-house-bw.png"/><img src="images/logos/ARCH-house.png"/></li><!--
+                --><li class="partner"><img src="images/logos/biofarma-bw.png"/><img src="images/logos/biofarma.png"/></li><!--
+                --><li class="partner"><img src="images/logos/cosmonova-logo-bw.png"/><img src="images/logos/cosmonova-logo.png"/></li><!--
+                --><li class="partner"><img src="images/logos/dss-bw.png"/><img src="images/logos/dss.png"/></li><!--
+                --><li class="partner"><img src="images/logos/finbank-bw.png"/><img src="images/logos/finbank.png"/></li><!--
             --></ul>
             <div class="arrow right-arrow">&#8250;</div>
         </div>
@@ -329,6 +343,12 @@
                 --><li class="partner"><img src="images/logos/scientific-logo-bw.png"/><img src="images/logos/scientific-logo.png"/></li><!--
                 --><li class="partner"><img src="images/logos/vtb-bw.png"/><img src="images/logos/vtb.png"/></li><!--
                 --><li class="partner"><img src="images/logos/zhitomirenergo-bw.png"/><img src="images/logos/zhitomirenergo.png"/></li><!--
+                --><li class="partner"><img src="images/logos/airport_logo-bw.png"/><img src="images/logos/airport_logo.png"/></li><!--
+                --><li class="partner"><img src="images/logos/ARCH-house-bw.png"/><img src="images/logos/ARCH-house.png"/></li><!--
+                --><li class="partner"><img src="images/logos/biofarma-bw.png"/><img src="images/logos/biofarma.png"/></li><!--
+                --><li class="partner"><img src="images/logos/cosmonova-logo-bw.png"/><img src="images/logos/cosmonova-logo.png"/></li><!--
+                --><li class="partner"><img src="images/logos/dss-bw.png"/><img src="images/logos/dss.png"/></li><!--
+                --><li class="partner"><img src="images/logos/finbank-bw.png"/><img src="images/logos/finbank.png"/></li><!--
             --></ul>
             <div class="arrow right-arrow-2">&#8250;</div>
         </div>
