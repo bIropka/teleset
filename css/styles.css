@@ -54,7 +54,7 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {color: 
     width: 40%;
     top: 13%;
     left: auto;
-    right: 0;
+    right: 2%;
     padding: 0;
 }
 .slide:nth-child(3) .line {
@@ -74,6 +74,34 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {color: 
     display: inline-block;
     font-family: "Roboto Regular", sans-serif;
     font-size: 0.7em;
+}
+.slide-icons {
+    display: inline-block;
+    width: 100%;
+}
+.slide-icons li {
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    margin: 0 1%;
+}
+.slide-icons .icon {
+    width: 50%;
+    padding-top: 50%;
+    margin: 5% 25%;
+}
+.slide-icons li:nth-child(1) .icon {background: url('../images/icons-sprite-3.png') no-repeat -1% center;background-size: cover;}
+.slide-icons li:nth-child(2) .icon {background: url('../images/icons-sprite-3.png') no-repeat 15% center;background-size: cover;}
+.slide-icons li:nth-child(3) .icon {background: url('../images/icons-sprite-3.png') no-repeat 32% center;background-size: cover;}
+.slide-icons li:nth-child(4) .icon {background: url('../images/icons-sprite-3.png') no-repeat 50% center;background-size: cover;}
+.slide-icons li:nth-child(5) .icon {background: url('../images/icons-sprite-3.png') no-repeat 66.5% center;background-size: cover;}
+.slide-icons li:nth-child(6) .icon {background: url('../images/icons-sprite-3.png') no-repeat 83% center;background-size: cover;}
+.slide-icons li:nth-child(7) .icon {background: url('../images/icons-sprite-3.png') no-repeat 100% center;background-size: cover;}
+.slide-icons .text-4 {
+    color: #4d8db5;
+    font-family: "Roboto Bold", sans-serif;
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.7), -2px -2px 3px rgba(255, 255, 255, 0.7);
+    text-transform: none;
 }
 .slide:nth-child(1){display: block;background:url("../images/slide-1.jpg");background-size: cover}
 .slide:nth-child(2){background:url("../images/slide-2.jpg");background-size: cover}
@@ -219,10 +247,10 @@ nav {
     cursor: pointer;
 }
 .control:hover {
-    border: 0.6em solid black;
+    border: 0.6em solid yellow;
 }
 .header-slider-controls .active {
-    border: 0.6em solid black;
+    border: 0.6em solid yellow;
 }
 .partners, .partners-2 {
     width: 100%;
