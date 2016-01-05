@@ -66,10 +66,12 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {color: 
 }
 .slide .content .text-2 {
     display: inline-block;
-    font-family: "Roboto Bold", sans-serif;
-    font-size: 3em;
+    width: 50%;
+    background: rgba(0, 0, 0, 0.3);
     color: white;
+    font-size: 2em;
     text-transform: uppercase;
+    padding: 0.5% 3%;
 }
 .slide .content .text-3 {
     display: inline-block;
@@ -376,13 +378,33 @@ header .content-block:last-child {
     float: right;
     vertical-align: top;
     margin-right: 5%;
+    text-align: left;
 }
 .call-us-form .field-wrap {
     width: 100%;
 }
+.call-us-form .captcha-image {
+    background: white url('../images/captcha.jpg') no-repeat;
+    background-size: cover;
+    display: inline-block;
+    width: 47.5%;
+    padding-top: 8%;
+    margin: 0 5% 1.5% 0;
+    float: left;
+}
+.call-us-form .captcha-wrap {
+    display: inline-block;
+    width: 47.5%;
+    float: right;
+    margin-top: 0;
+}
+.call-us-form .captcha-wrap input {
+    padding: 3% 0 3% 6%;
+    margin: 0;
+}
 .call-us-form input, .call-us-form textarea {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: 94%;
     margin: 1% 0;
     border: none;
     padding: 1.5% 3%;
@@ -395,7 +417,7 @@ header .content-block:last-child {
     overflow: auto;
 }
 #to-send {
-    width: 106%;
+    width: 100%;
     padding: 2% 0;
     border: 1px solid white;
     background-color: #0069af;
@@ -647,4 +669,6 @@ footer a:hover {
     .call-us .title .text-1 {font-size: 2.5em}
     .call-us .title .text-1 {font-size: 1.5em}
     .phone-number{font-size: 0.9em;}
+    .call-us-form input, .call-us-form textarea {font-size: 0.8em;}
+    #to-send {font-size: 0.9em;}
 }
