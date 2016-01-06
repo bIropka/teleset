@@ -57,13 +57,6 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {color: 
     right: 2%;
     padding: 0;
 }
-.slide .content .line {
-    width: 15%;
-    height: 0;
-    border-top: 1px solid white;
-    display: inline-block;
-    margin: 1em 5%;
-}
 .slide .content .text-2 {
     display: inline-block;
     width: 50%;
