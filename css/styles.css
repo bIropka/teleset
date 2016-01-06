@@ -606,12 +606,10 @@ footer a:hover {
 @media (max-width: 1440px) {
     .content-block {width: 80%;}
     .slide .content .text-2 {font-size: 1.5em;}
-    .slide .content .text-3 {font-size: 1em;}
     .slide .content .text-4 {font-size: 0.8em;}
 }
 @media (max-width: 1366px) {
     .lang-select-wrap .mark {bottom: 2px;right: 3px}
-
 }
 @media (max-width: 1180px) {
     header .content-block{text-align: center; text-align-last: center}
@@ -622,17 +620,14 @@ footer a:hover {
     .main-menu li {width: 30%;padding: 0.75% 0;}
     .logo {margin-top: 0.5%;}
     .slide .text-1{font-size: 1.3em;top:30%;}
-    .header-slider-controls {width: 15%;margin-top: 10%;margin-left: 70%;}
+    .header-slider-controls {width: 15%;margin-top: 15%;margin-left: 70%;}
     .phone-number{margin-top:1.5%;}
     .lang-select-wrap {margin-top:1.8%;}
     .slide .content {width: 90%;top: 25%;right: auto; left: 10%;}
-    .slide .content .line{display: none;}
     .slide-icons {margin-top: 0;}
     .slide-icons li {width:14%;text-align: center;}
     .slide-icons .icon {width: 35%;padding-top: 35%;margin: 5% 32.5%;}
     .slide .content .text-2 {float: left;margin-left: 4%;}
-    .slide .content .text-3 {float: right;margin-right: 3%;}
-    .slide .content .text-3:after {clear: both;}
     .slide-icons .text-4 {font-size: 0.8em;}
     .arrow {line-height: 0.7em;}
     .slider{width: 70%;}
@@ -642,11 +637,15 @@ footer a:hover {
     .our-services .content-block>ul>li:first-child {width: 30%;}
     .our-services .content-block>ul>li:last-child {width: 30%;}
     .call-us-form {width: 30%;}
+    .slide .content {width: 100%;left: 1%;}
+    .slide .content .slide-icons {text-align: left;}
+    .slide .content .slide-icons  li {width: 12%;margin: 0 0.5%;}
 }
 @media (max-width: 1024px) {
     .slide .text-1{font-size: 1em;top:30%;}
+    .slide .content .text-2{font-size: 1em;}
     .slide-icons .icon {width: 30%;padding-top: 30%;margin: 5% 35%;}
-    nav {width: 50%;}
+    nav {width: 49%;}
     .logo{font-size: 0.8em;margin-left: 0.5%;}
     .our-services .content-block > ul > li a {font-size: 1.1em}
     footer .block:nth-child(1){width: 100%;margin-left: 0;text-align: center}
@@ -664,4 +663,33 @@ footer a:hover {
     .phone-number{font-size: 0.9em;}
     .call-us-form input, .call-us-form textarea {font-size: 0.8em;}
     #to-send {font-size: 0.9em;}
+}
+@media (max-width: 768px) {
+    * {font-size: 0.98em;}
+    .control {border: 0.4em solid #b1b1b1;}
+    .control:hover {border: 0.4em solid #5b5b5b;}
+    .header-slider-controls .active {border: 0.4em solid #5b5b5b;}
+    .call-us-form .captcha-image {padding-top: 10%;}
+    .logo{font-size: 0.6em;}
+    nav {width: 40%;}
+    nav .main-menu li {width: 45%;}
+    .phone-number{font-size: 0.8em;}
+    .slide .text-1 {top: 45%;width: 70%;left: 20%;}
+    .arrow {line-height: 0.5em;}
+}
+@media (max-width: 640px) {
+    *{font-size: 0.957em;}
+    .logo{font-size: 0.55em;}
+    nav {width: 42.5%;margin-left: -3%;}
+    .slide .content .text-2 {margin: 3% 0;width: 25%;}
+    .slide .content .slide-icons  .text-4 {font-size: 0.6em;}
+    .header-slider-controls {margin-top: 15%;}
+    .arrow {line-height: 0.3em;}
+    footer ul li div, footer a {font-size: 0.8em;}
+    .call-us-form input, .call-us-form textarea {font-size: 0.63em;}
+    .call-us-form .captcha-wrap input {padding: 5% 0 5% 6%;}
+    .call-us-form .captcha-image {margin-top: 2%;}
+    .content-block .block-title {font-size: 1.5em;}
+    .our-services .content-block > ul > li a {font-size: 0.9em;}
+    .company-block .advantages, .company-block .work-base {width: 45%; font-size: 0.9em;}
 }
