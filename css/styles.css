@@ -104,7 +104,7 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {color: 
 }
 .slide:nth-child(1){display: block;background:url("../images/slide-1.jpg");background-size: cover}
 .slide:nth-child(2){background:url("../images/slide-2.jpg");background-size: cover}
-.slide:nth-child(3){background:url("../images/slide-3.jpg");background-size: 120% 100%}
+.slide:nth-child(3){background:url("../images/slide-3.jpg");background-size: cover}
 .slide:nth-child(4){background:url("../images/slide-4.jpg");background-size: cover}
 .slide:nth-child(5){background:url("../images/slide-5.jpg");background-size: cover}
 .clearfix {clear: both;}
@@ -154,7 +154,7 @@ header .content-block {
 .logo .line {
     display: inline-block;
     border-top: 1px solid white;
-    width: 15%;
+    width: 10%;
     vertical-align: top;
     margin-top: 3.5%;
 }
@@ -599,19 +599,19 @@ footer a {
 footer a:hover {
     color: #0069af;
 }
-@media screen and (max-width: 1600px) {
+@media (max-device-width: 1600px) {
     .call-us .title .text-1 {font-size: 3em;}
     .slide .text-1{font-size: 1.5em;}
 }
-@media screen and (max-width: 1440px) {
+@media (max-device-width: 1440px) {
     .content-block {width: 80%;}
     .slide .content .text-2 {font-size: 1.5em;}
     .slide .content .text-4 {font-size: 0.8em;}
 }
-@media  screen and (max-width: 1366px) {
+@media (max-device-width: 1366px) {
     .lang-select-wrap .mark {bottom: 2px;right: 3px}
 }
-@media  screen and (max-width: 1180px) {
+@media (max-device-width: 1180px) {
     header .content-block{text-align: center; text-align-last: center}
     .content-block {width: 100%;}
     nav {width: 45%;margin-top: 0.5%;}
@@ -641,7 +641,7 @@ footer a:hover {
     .slide .content .slide-icons {text-align: left;}
     .slide .content .slide-icons  li {width: 12%;margin: 0 0.5%;}
 }
-@media  screen and (max-width: 1024px) {
+@media (max-device-width: 1024px) {
     .slide .text-1{font-size: 1em;top:30%;}
     .slide .content .text-2{font-size: 1em;}
     .slide-icons .icon {width: 30%;padding-top: 30%;margin: 5% 35%;}
@@ -664,7 +664,7 @@ footer a:hover {
     .call-us-form input, .call-us-form textarea {font-size: 0.8em;}
     #to-send {font-size: 0.9em;}
 }
-@media  screen and (max-width: 768px) {
+@media (max-device-width: 768px) {
     * {font-size: 0.98em;}
     .control {border: 0.4em solid #b1b1b1;}
     .control:hover {border: 0.4em solid #5b5b5b;}
@@ -677,7 +677,7 @@ footer a:hover {
     .slide .text-1 {top: 45%;width: 70%;left: 20%;}
     .arrow {line-height: 0.5em;}
 }
-@media  screen and (max-width: 640px) {
+@media (max-device-width: 640px) {
     *{font-size: 0.957em;}
     nav {width: 42.5%;margin-left: -3%;}
     .slide .content .text-2 {margin: 3% 0;width: 25%;}
@@ -691,4 +691,69 @@ footer a:hover {
     .content-block .block-title {font-size: 1.5em;}
     .our-services .content-block > ul > li a {font-size: 0.9em;}
     .company-block .advantages, .company-block .work-base {width: 45%; font-size: 0.9em;}
+}
+@media (max-device-width: 540px) {
+    .content-block {width: 100%!important;}
+    nav {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        width: 90%;
+        left: 5%;
+        top: 22%;
+    }
+    nav .main-menu li {width: 30%;font-size: 1.1em;font-weight: bold;}
+    nav .main-menu li:nth-child(4){width: 35%;}
+    nav .main-menu li:nth-child(5){width: 25%;}
+    .logo {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    header .content-block .logo .text-1 {font-size: 30px;}
+    .phone-number {margin-left: 2%;margin-right: 2%;font-size: 0.7em;}
+    .lang-select-wrap{float: none;width: 25px;}
+    .slider {width: 80%;}
+    .slide .content {top: 40%;}
+	.slide .content .slide-icons li {width: 23%;}
+    .header-slider-controls{margin-top: 70%;width: 25%;}
+	.header-slider-controls li{
+		-webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+}
+    .call-us .title, .call-us .call-us-form {
+        width: 90%;
+        margin: 3% 5%;
+    }
+    .call-us .title{font-size: 1.5em;}
+    .call-us .call-us-form {float: none;}
+    .call-us .call-us-form input, .call-us .call-us-form textarea {font-size: 1.5em;}
+    .call-us .call-us-form .captcha-image {margin-top: 0;}
+    #to-send {margin-top: 3%;}
+    .our-services .content-block > ul > li {
+        display: inline-block;
+        width: 100%!important;
+        font-size: 2em;
+    }
+    .our-services .content-block .text-1{font-size: 2em;}
+    footer .block {width: 80%!important; float: none;margin-left: 10%!important;}
+    footer .title {font-size: 2em;margin-top: 10%;}
+    footer .footer-menu li {width: 100%!important;}
+    footer .footer-menu li:first-child {margin-top: 5%;}
+    footer ul li div, footer a {font-size: 1.5em;}
+	.slide:nth-child(3) {background-position:50% 0;}
+    .contacts-block .content-icon, .company-block .content-icon, .services-block .content-icon {
+        width: 5%;
+        padding-top: 4%;
+    }
+    .contacts-block .on-map, .contacts-block .footer-contacts {width: 90%; margin-left: 5%;}
+    .services-block .sub-title, .company-block .sub-title {margin-top: 5%;}
+    .services-block ul, .services-block .right-list {
+        float: none;
+        width: 90%;
+        margin: 0 0 0 5%;
+    }
+    .services-block span, .company-block p, .company-block li {font-size: 1.3em;}
+    .company-block .advantages, .company-block .work-base {width: 90%;float: none;margin: 0 0 0 5%;}
 }
