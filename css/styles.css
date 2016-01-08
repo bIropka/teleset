@@ -109,6 +109,7 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {color: 
 .slide:nth-child(5){background:url("../images/slide-5.jpg");background-size: cover}
 .clearfix {clear: both;}
 html {
+    width: 100%;
     overflow-x: hidden;
 }
 body {
@@ -132,7 +133,7 @@ header .content-block {
     height: 0;
     visibility: hidden;
 }
-.logo {
+/*.logo {
     display: inline-block;
     border: 1px solid white;
     -webkit-border-radius: 10px;
@@ -162,17 +163,17 @@ header .content-block {
     display: inline-block;
     font-size: 0.62em;
     vertical-align: top;
-}
+}*/
 .logo-image {
     display: inline-block;
+    text-decoration: none;
+    outline: none;
     margin-top: 1.953125%;
     margin-left: 2.6%;
     vertical-align: top;
     width: 15%;
-    padding-top: 5.677966101694915%;
-    background: transparent url("../images/logo.png") no-repeat;
-    background-size: cover;
 }
+.logo-image img {width: 100%;}
 nav {
     display: inline-block;
     width: 53.515625%;
@@ -244,7 +245,7 @@ nav {
     vertical-align: top;
 }
 .header-slider-controls {
-    width: 10%;
+    width: 15%;
     margin-top: 24.5%;
     margin-left: 73.33%;
     list-style: none;
@@ -334,12 +335,12 @@ header .content-block:last-child {
 .our-services .content-block>ul {
     display: table;
     width: 100%;
-    margin: 0 5%;
 }
 .our-services .content-block>ul>li {
     display: table-cell;
     width: 36%;
 }
+.our-services .content-block>ul>li:first-child{padding-left: 3%;}
 .our-services .content-block>ul>li:nth-child(2) {width: 36%;}
 .our-services .content-block>ul>li a {
     font-family: "Roboto Thin", sans-serif;
@@ -610,33 +611,34 @@ footer a {
 footer a:hover {
     color: #0069af;
 }
-@media (max-device-width: 1600px) {
+@media (max-width: 1600px) {
     .call-us .title .text-1 {font-size: 3em;}
     .slide .text-1{font-size: 1.5em;}
 }
-@media (max-device-width: 1440px) {
+@media (max-width: 1440px) {
     .content-block {width: 80%;}
     .slide .content .text-2 {font-size: 1.5em;}
     .slide .content .text-4 {font-size: 0.8em;}
 }
-@media (max-device-width: 1366px) {
+@media (max-width: 1366px) {
     .lang-select-wrap .mark {bottom: 2px;right: 3px}
 }
-@media (max-device-width: 1180px) {
+@media (max-width: 1180px) {
     header .content-block{text-align: center; text-align-last: center}
-    .content-block {width: 100%;}
+    .content-block {width: 100%!important;}
     nav {width: 45%;margin-top: 0.5%;}
     .content-block .block-title {font-size: 2em;}
     .main-menu {text-align: center;text-align-last: center;    }
     .main-menu li {width: 30%;padding: 0.75% 0;}
-    nav .main-menu li:nth-child(4){width: 35%;}
-    nav .main-menu li:nth-child(5){width: 25%;}
-    .logo {margin-top: 0.5%;}
+    nav .main-menu li:nth-child(4){width: 33%;}
+    nav .main-menu li:nth-child(5){width: 27%;}
+    /*.logo {margin-top: 0.5%;}*/
+    .logo-image {margin-top: 0.5%;}
     .slide .text-1{font-size: 1.3em;top:30%;}
     .header-slider-controls {width: 15%;margin-top: 15%;margin-left: 70%;}
     .phone-number{margin-top:1.5%;}
     .lang-select-wrap {margin-top:1.8%;}
-    .slide .content {width: 90%;top: 25%;right: auto; left: 10%;}
+    .slide .content {width: 90%!important;top: 25%;right: auto; left: 10%;}
     .slide-icons {margin-top: 0;}
     .slide-icons li {width:14%;text-align: center;}
     .slide-icons .icon {width: 35%;padding-top: 35%;margin: 5% 32.5%;}
@@ -645,7 +647,6 @@ footer a:hover {
     .arrow {line-height: 0.7em;}
     .slider{width: 70%;}
     .partners .title, .partners-2 .title {font-size: 1.1em;}
-    .our-services .content-block>ul {margin: 0 3%;}
     .our-services .text-1 {margin-left: 3%;}
     .our-services .content-block>ul>li:first-child {width: 30%;}
     .our-services .content-block>ul>li:last-child {width: 30%;}
@@ -654,12 +655,12 @@ footer a:hover {
     .slide .content .slide-icons {text-align: left;}
     .slide .content .slide-icons  li {width: 12%;margin: 0 0.5%;}
 }
-@media (max-device-width: 1024px) {
+@media (max-width: 1024px) {
     .slide .text-1{font-size: 1em;top:30%;}
     .slide .content .text-2{font-size: 1em;}
     .slide-icons .icon {width: 30%;padding-top: 30%;margin: 5% 35%;}
     nav {width: 49%;}
-    .logo{font-size: 0.8em;margin-left: 0.5%;}
+    /*.logo{font-size: 0.8em;margin-left: 0.5%;}*/
     .our-services .content-block > ul > li a {font-size: 1.1em}
     footer .block:nth-child(1){width: 100%;margin-left: 0;text-align: center}
     .footer-menu .title {margin-left: 0;}
@@ -677,13 +678,13 @@ footer a:hover {
     .call-us-form input, .call-us-form textarea {font-size: 0.8em;}
     #to-send {font-size: 0.9em;}
 }
-@media (max-device-width: 768px) {
+@media (max-width: 768px) {
     * {font-size: 0.98em;}
     .control {border: 0.4em solid #b1b1b1;}
     .control:hover {border: 0.4em solid #5b5b5b;}
     .header-slider-controls .active {border: 0.4em solid #5b5b5b;}
     .call-us-form .captcha-image {padding-top: 10%;}
-    .logo{font-size: 0.55em;}
+    /*.logo{font-size: 0.55em;}*/
     nav {width: 40%;}
     nav .main-menu li {width: 45%;}
     nav .main-menu li:nth-child(4){width: 50%;}
@@ -692,7 +693,7 @@ footer a:hover {
     .slide .text-1 {top: 45%;width: 70%;left: 20%;}
     .arrow {line-height: 0.5em;}
 }
-@media (max-device-width: 640px) {
+@media (max-width: 640px) {
     *{font-size: 0.957em;}
     nav {width: 42.5%;margin-left: -3%;}
     .slide .content .text-2 {margin: 3% 0;width: 25%;}
@@ -707,7 +708,7 @@ footer a:hover {
     .our-services .content-block > ul > li a {font-size: 0.9em;}
     .company-block .advantages, .company-block .work-base {width: 45%; font-size: 0.9em;}
 }
-@media (max-device-width: 540px) {
+@media (max-width: 540px) {
     .content-block {width: 100%!important;}
     nav {
         margin: 0;
@@ -720,14 +721,14 @@ footer a:hover {
     nav .main-menu li {width: 30%;font-size: 1.1em;font-weight: bold;}
     nav .main-menu li:nth-child(4){width: 35%;}
     nav .main-menu li:nth-child(5){width: 25%;}
-    .logo {
+    /*.logo {
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
     }
-    header .content-block .logo .text-1 {font-size: 30px;}
-    .phone-number {margin-left: 2%;margin-right: 2%;font-size: 0.7em;}
-    .lang-select-wrap{float: none;width: 35px;}
+    header .content-block .logo .text-1 {font-size: 30px;}*/
+    .phone-number {margin-top: 4%;margin-left: 2%;margin-right: 2%;font-size: 0.7em;}
+    .lang-select-wrap{float: none;width: 35px;margin-top: 4%;}
     .slider {width: 80%;}
     .slide .content {top: 40%;}
 	.slide .content .slide-icons li {width: 23%;}
@@ -771,5 +772,5 @@ footer a:hover {
     }
     .services-block span, .company-block p, .company-block li {font-size: 1.3em;}
     .company-block .advantages, .company-block .work-base {width: 90%;float: none;margin: 0 0 0 5%;}
-    .logo-image {width: 30%;padding-top:11.35593220338983%;}
+    .logo-image {width: 20%;margin:2% 0 0 1%;}
 }
