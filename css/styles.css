@@ -163,6 +163,16 @@ header .content-block {
     font-size: 0.62em;
     vertical-align: top;
 }
+.logo-image {
+    display: inline-block;
+    margin-top: 1.953125%;
+    margin-left: 2.6%;
+    vertical-align: top;
+    width: 15%;
+    padding-top: 5.677966101694915%;
+    background: transparent url("../images/logo.png") no-repeat;
+    background-size: cover;
+}
 nav {
     display: inline-block;
     width: 53.515625%;
@@ -205,6 +215,7 @@ nav {
     display: inline-block;
     font-family:'Roboto Bold',sans-serif;
     font-size:1.4em;
+    color: white;
 }
 .lang-select-wrap {
     display: inline-block;
@@ -618,6 +629,8 @@ footer a:hover {
     .content-block .block-title {font-size: 2em;}
     .main-menu {text-align: center;text-align-last: center;    }
     .main-menu li {width: 30%;padding: 0.75% 0;}
+    nav .main-menu li:nth-child(4){width: 35%;}
+    nav .main-menu li:nth-child(5){width: 25%;}
     .logo {margin-top: 0.5%;}
     .slide .text-1{font-size: 1.3em;top:30%;}
     .header-slider-controls {width: 15%;margin-top: 15%;margin-left: 70%;}
@@ -673,6 +686,8 @@ footer a:hover {
     .logo{font-size: 0.55em;}
     nav {width: 40%;}
     nav .main-menu li {width: 45%;}
+    nav .main-menu li:nth-child(4){width: 50%;}
+    nav .main-menu li:nth-child(5){width: 40%;}
     .phone-number{font-size: 0.8em;}
     .slide .text-1 {top: 45%;width: 70%;left: 20%;}
     .arrow {line-height: 0.5em;}
@@ -712,7 +727,7 @@ footer a:hover {
     }
     header .content-block .logo .text-1 {font-size: 30px;}
     .phone-number {margin-left: 2%;margin-right: 2%;font-size: 0.7em;}
-    .lang-select-wrap{float: none;width: 25px;}
+    .lang-select-wrap{float: none;width: 35px;}
     .slider {width: 80%;}
     .slide .content {top: 40%;}
 	.slide .content .slide-icons li {width: 23%;}
@@ -756,4 +771,5 @@ footer a:hover {
     }
     .services-block span, .company-block p, .company-block li {font-size: 1.3em;}
     .company-block .advantages, .company-block .work-base {width: 90%;float: none;margin: 0 0 0 5%;}
+    .logo-image {width: 30%;padding-top:11.35593220338983%;}
 }
