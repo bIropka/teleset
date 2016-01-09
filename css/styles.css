@@ -748,11 +748,11 @@ footer a:hover {
     /*.lang-select-wrap{float: none;width: 35px;margin-top: 4%;}*/
     nav {top: 15%;}
     nav .main-menu li a {font-size: 1em;}
-    .logo-image {width: 20%;}
+    .logo-image {width: 20%;margin: 4% 0 0 -1%;}
     .slider {width: 80%;}
     .slide .content {top: 30%;}
 	.slide .content .slide-icons li {width: 23%;}
-    .header-slider-controls{margin-top: 50%;width: 25%;}
+    .header-slider-controls{margin-top: 50%;width: 30%;}
 	.header-slider-controls li{
 		-webkit-border-radius: 5px;
         -moz-border-radius: 5px;
@@ -764,16 +764,16 @@ footer a:hover {
     }
     .call-us .title{font-size: 1.5em;}
     .call-us .call-us-form {float: none;}
-    .call-us .call-us-form input, .call-us .call-us-form textarea {font-size: 1.5em;}
+    .call-us .call-us-form input, .call-us .call-us-form textarea {font-size: 1.1em;}
     .call-us .call-us-form .captcha-image {margin-top: 0;}
     #to-send {margin-top: 3%;}
     .our-services .content-block > ul > li {
         display: inline-block;
-        width: 100%!important;
-        font-size: 2em;
+        width: 97%!important;
+        font-size: 1.5em;
         padding-left: 3%;
     }
-    .our-services .content-block .text-1{font-size: 2em;}
+    .our-services .content-block .text-1{font-size: 1.5em;}
     footer .block {width: 80%!important; float: none;margin-left: 10%!important;}
     footer .title {font-size: 2em;margin-top: 10%;}
     footer .footer-menu li {width: 100%!important;}
@@ -791,10 +791,11 @@ footer a:hover {
         width: 90%;
         margin: 0 0 0 5%;
     }
-    .services-block span, .company-block p, .company-block li {font-size: 1.3em;}
+    .services-block span, .company-block p, .company-block li {font-size: 1.2em;}
     .company-block .advantages, .company-block .work-base {width: 90%;float: none;margin: 0 0 0 5%;}
-
+    .content-block .block-title {font-size: 1.5em;}
 }
 @media (max-width: 540px) {
     .slide .content .slide-icons .text-4 {font-size: 0.6em;}
+    nav .main-menu li a {font-size: 0.75em;}
 }
