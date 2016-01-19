@@ -5,93 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Услуги</title>
     <link rel="stylesheet" href="css/styles.css"/>
-    <script src="js/jquery-2.1.4.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            /***** main slider *****/
-            var currentSlide = 0, nextSlide = 1;
-            var controls = $('.control');
-            var slides = $('.slide');
-
-            var changeSlide = function() {
-                $(slides).eq(currentSlide).fadeOut(1000);
-                $(slides).eq(nextSlide).fadeIn(1000);
-            };
-
-            var forTimer = function(){
-                /****main slider******/
-                if(currentSlide === 4) {
-                    nextSlide = 0;
-                } else {
-                    nextSlide = currentSlide + 1;
-                }
-                changeSlide();
-                currentSlide = nextSlide;
-                $(controls).removeClass('active');
-                $(controls).eq(currentSlide).addClass('active');
-                /***** partners ****/
-                rightShift();
-            };
-            var myTimer = setInterval(forTimer, 6000);
-
-            $(controls).click(function() {
-                if(!$(this).hasClass('active')){
-                    nextSlide = $(controls).index(this);
-                    $('.control').removeClass('active');
-                    $(this).addClass('active');
-                    changeSlide();
-                    currentSlide = nextSlide;
-                }
-            });
-            /***** end of main slider *****/
-
-            /***** slider with partners ****/
-            var elements = $('.partners .partner');
-            var firstElement = $('.partners .partner:first-child');
-            var firstVisible = 6;
-            var  leftShift = function(){
-                if(firstVisible > 0){
-                    $(firstElement).animate({
-                        'margin-left': '+=49.5%'
-                    }, 600);
-                    firstVisible -= 3;
-                } else {
-                    $(firstElement).css('margin-left', '-297%');
-                    firstVisible = elements.length - 6;
-                    $(firstElement).animate({
-                        'margin-left': '+=49.5%'
-                    }, 600);
-                    firstVisible -= 3;
-                }
-                $(elements).removeClass('first-visible');
-                $(elements).eq(firstVisible).addClass('first-visible');
-            };
-            var  rightShift = function(){
-                if(firstVisible < elements.length - 6){
-                    $(firstElement).animate({
-                        'margin-left': '-=49.5%'
-                    }, 600);
-                    firstVisible += 3;
-                } else {
-                    $(firstElement).css('margin-left', '0%');
-                    firstVisible = 0;
-                    $(firstElement).animate({
-                        'margin-left': '-=49.5%'
-                    }, 600);
-                    firstVisible += 3;
-                }
-                $(elements).removeClass('first-visible');
-                $(elements).eq(firstVisible).addClass('first-visible');
-            };
-            $('.left-arrow').click(function(){
-                leftShift();
-            });
-            $('.right-arrow').click(function(){
-                rightShift()
-            });
-            /*************************/
-        });
-    </script>
 </head>
 <body>
 
@@ -355,5 +268,7 @@
         <div class="clearfix"></div>
     </div>
 </footer>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/custom-scripts.js"></script>
 </body>
 </html>

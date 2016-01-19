@@ -5,138 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Компания</title>
     <link rel="stylesheet" href="css/styles.css"/>
-    <script src="js/jquery-2.1.4.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            /***** main slider *****/
-            var currentSlide = 0, nextSlide = 1;
-            var controls = $('.control');
-            var slides = $('.slide');
-
-            var changeSlide = function() {
-                $(slides).eq(currentSlide).fadeOut(1000);
-                $(slides).eq(nextSlide).fadeIn(1000);
-            };
-
-            var forTimer = function(){
-                /****main slider******/
-                if(currentSlide === 4) {
-                    nextSlide = 0;
-                } else {
-                    nextSlide = currentSlide + 1;
-                }
-                changeSlide();
-                currentSlide = nextSlide;
-                $(controls).removeClass('active');
-                $(controls).eq(currentSlide).addClass('active');
-                /***** partners ****/
-                rightShift();
-                rightShift2();
-            };
-            setInterval(forTimer, 6000);
-
-            $(controls).click(function() {
-                if(!$(this).hasClass('active')){
-                    nextSlide = $(controls).index(this);
-                    $('.control').removeClass('active');
-                    $(this).addClass('active');
-                    changeSlide();
-                    currentSlide = nextSlide;
-                }
-            });
-            /***** end of main slider *****/
-
-            /***** sliders with partners ****/
-            /****** slider-1 *******/
-            var elements = $('.partners .partner');
-            var firstElement = $('.partners .partner:first-child');
-            var firstVisible = 6;
-            var  leftShift = function(){
-                if(firstVisible > 0){
-                    $(firstElement).animate({
-                        'margin-left': '+=49.5%'
-                    }, 600);
-                    firstVisible -= 3;
-                } else {
-                    $(firstElement).css('margin-left', '-297%');
-                    firstVisible = elements.length - 6;
-                    $(firstElement).animate({
-                        'margin-left': '+=49.5%'
-                    }, 600);
-                    firstVisible -= 3;
-                }
-                $(elements).removeClass('first-visible');
-                $(elements).eq(firstVisible).addClass('first-visible');
-            };
-            var  rightShift = function(){
-                if(firstVisible < elements.length - 6){
-                    $(firstElement).animate({
-                        'margin-left': '-=49.5%'
-                    }, 600);
-                    firstVisible += 3;
-                } else {
-                    $(firstElement).css('margin-left', '0%');
-                    firstVisible = 0;
-                    $(firstElement).animate({
-                        'margin-left': '-=49.5%'
-                    }, 600);
-                    firstVisible += 3;
-                }
-                $(elements).removeClass('first-visible');
-                $(elements).eq(firstVisible).addClass('first-visible');
-            };
-            $('.left-arrow').click(function(){
-                leftShift();
-            });
-            $('.right-arrow').click(function(){
-                rightShift()
-            });
-            /****** slider-2 *******/
-            var elements2 = $('.partners-2 .partner');
-            var firstElement2 = $('.partners-2 .partner:first-child');
-            var firstVisible2 = 6;
-            var  leftShift2 = function(){
-                if(firstVisible2 > 0){
-                    $(firstElement2).animate({
-                        'margin-left': '+=49.5%'
-                    }, 600);
-                    firstVisible2 -= 3;
-                } else {
-                    $(firstElement2).css('margin-left', '-297%');
-                    firstVisible2 = elements2.length - 6;
-                    $(firstElement2).animate({
-                        'margin-left': '+=49.5%'
-                    }, 600);
-                    firstVisible2 -= 3;
-                }
-                $(elements2).removeClass('first-visible');
-                $(elements2).eq(firstVisible2).addClass('first-visible');
-            };
-            var  rightShift2 = function(){
-                if(firstVisible2 < elements2.length - 6){
-                    $(firstElement2).animate({
-                        'margin-left': '-=49.5%'
-                    }, 600);
-                    firstVisible2 += 3;
-                } else {
-                    $(firstElement2).css('margin-left', '0%');
-                    firstVisible2 = 0;
-                    $(firstElement2).animate({
-                        'margin-left': '-=49.5%'
-                    }, 600);
-                    firstVisible2 += 3;
-                }
-                $(elements2).removeClass('first-visible');
-                $(elements2).eq(firstVisible2).addClass('first-visible');
-            };
-            $('.left-arrow-2').click(function(){
-                leftShift2();
-            });
-            $('.right-arrow-2').click(function(){
-                rightShift2();
-            });
-        });
-    </script>
 </head>
 <body>
 
@@ -427,5 +295,7 @@
         <div class="clearfix"></div>
     </div>
 </footer>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/custom-scripts.js"></script>
 </body>
 </html>
